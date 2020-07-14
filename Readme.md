@@ -1,7 +1,7 @@
 # Личный проект «Кэт энерджи» [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
 
 * Студент: [Fidan Hajiyeva](https://up.htmlacademy.ru/adaptive/20/user/1482853).
-* Наставник: [Виктор Кан](https://htmlacademy.ru/profile/viktorkan)..
+* Наставник: [Виктор Кан](https://htmlacademy.ru/profile/viktorkan).
 
 ---
 
