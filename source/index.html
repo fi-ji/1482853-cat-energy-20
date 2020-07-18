@@ -1,12 +1,122 @@
 <!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <meta charset="utf-8">
-    <title>HTML Academy: Кэт энерджи</title>
-  </head>
-  <body>
+<html class="page" lang="ru">
 
-    <p>Репозиторий создан для обучения на профессиональном онлайн‑курсе «<a href="https://htmlacademy.ru/intensive/adaptive">HTML и CSS, уровень 2</a>».</p>
+<head>
+  <meta charset="utf-8">
+  <title>HTML Academy: Кэт энерджи</title>
+</head>
 
-  </body>
+<body class="page__body">
+
+  <header class="header">
+    <div class="header__wrapper">
+      <a class="header__logo logo">
+        <img src="https://via.placeholder.com/150x150">
+      </a>
+
+      <nav class="header__navigation">
+        <button class="header__toggle" type="button">
+          <span class="visually-hidden">Открыть/Закрыть меню</span>
+        </button>
+
+        <ul class="header__list site-list">
+          <li><a class="site-list__link">Главная</a></li>
+          <li><a class="site-list__link" href="catalog.html">Каталог продукции</a></li>
+          <li><a class="site-list__link" href="form.html">Подбор программы</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <section class="promo">
+      <div class="promo__wrapper">
+        <h1 class="promo__title main-title">Функциональное питание для котов</h1>
+        <p class="promo__tagline">Занялся собой? Займись котом!</p>
+
+        <div class="promo__img-wrapper">
+          <img src="https://via.placeholder.com/150x150">
+        </div>
+
+        <a class="promo__link button" href="form.html">Подобрать программу</a>
+      </div>
+    </section>
+
+    <section class="goals">
+      <div class="goals__wrapper">
+        <h2 class="visually-hidden">Цели</h2>
+
+        <article class="goals__item goal">
+          <h3 class="goal__title">Похудение</h3>
+          <p class="goal__txt">Ваш кот весит больше собаки и почти утратил способность лазить по деревьям? Пора на
+            диету! Cat Energy Slim поможет
+            вашему питомцу сбросить лишний вес.</p>
+          <a class="goal__link" href="#">Каталог Slim</a>
+        </article>
+
+        <article class="goals__item goal">
+          <h3 class="goal__title">Набор массы</h3>
+          <p class="goal__txt">Заработать авторитет среди дворовых котов и даже собак? Серия Cat Energy Pro поможет
+            вашему коту нарастить необходимые
+            мышцы!</p>
+          <a class="goal__link" href="#">Каталог Pro</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="info">
+      <div class="info__wrapper">
+        <h2 class="info__title">Как это работает</h2>
+
+        <ul class="info__list">
+          <li class="info__item">Функциональное питание содержит только полезные
+            питательные вещества.</li>
+          <li class="info__item">Выпускается в виде порошка, который нужно лишь залить
+            кипятком и готово.</li>
+          <li class="info__item">Замените один-два приема обычной еды на наше
+            функциональное питание.</li>
+          <li class="info__item">Уже через месяц наслаждайтесь изменениями к лучшему вашего питомца!</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="example">
+      <h2 class="example__title">Живой пример</h2>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+
+    <section class="footer__top-row contacts">
+      <h2 class="visually-hidden">Наш адрес</h2>
+    </section>
+
+    <section class="footer__bottom-row">
+      <div class="footer__wrapper">
+        <h2 class="visually-hidden">Ccылки</h2>
+
+        <a class="footer__logo">
+          <img src="https://via.placeholder.com/150x150">
+        </a>
+
+        <ul class="footer__list social">
+          <li><a class="social__link social__link--vk" href="#" target="_blank">Вконтакте</a></li>
+          <li><a class="social__link social__link--instagram" href="#" target="_blank">Instagram</a></li>
+          <li><a class="social__link social__link--facebook" href="#" target="_blank">Facebook</a></li>
+        </ul>
+
+        <div class="footer__copyright copyright">
+          <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive" target="_blank">HTML Academy</a>
+
+          <a class="copyright__logo-link" href="https://htmlacademy.ru/intensive/adaptive" target="_blank">
+            <img src="https://via.placeholder.com/150x150">
+          </a>
+        </div>
+      </div>
+    </section>
+  </footer>
+</body>
+
 </html>
