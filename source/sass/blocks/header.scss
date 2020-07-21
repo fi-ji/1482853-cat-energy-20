@@ -1,0 +1,6 @@
+.header {
+	color: $basic_black;
+
+	@include font-prop(20px, 20px, 500);
+	text-transform: uppercase;
+}

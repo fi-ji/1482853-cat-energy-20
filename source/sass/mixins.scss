@@ -1,0 +1,5 @@
+@mixin font-prop($size, $line-height, $weight: 400) {
+	font-size: $size;
+	line-height: $line-height;
+	font-weight: $weight;
+}
