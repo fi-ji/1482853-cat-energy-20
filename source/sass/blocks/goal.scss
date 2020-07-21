@@ -1,5 +1,8 @@
 .goal {
 	background-color: $basic_grey;
+
+	padding-top: 21px;
+	padding-bottom: 18px;
 }
 
 .goal__title {
@@ -7,7 +10,15 @@
 
 	font-family: $oswald;
 	@include font-prop(24px, 37px);
+	font-weight: 400;
 	text-transform: uppercase;
+
+	margin: 0;
+}
+
+.goal__txt {
+	border-bottom: 1px solid $special_grey-4;
+	padding-bottom: 23px;
 }
 
 .goal__link {

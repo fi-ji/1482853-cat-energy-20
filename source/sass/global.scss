@@ -41,26 +41,7 @@ input[type="radio"].visually-hidden {
 .main-title {
 	font-family: $oswald;
 	@include font-prop(36px, 36px);
-}
+	font-weight: 400;
 
-.button {
-	background-color: $basic_green;
-	color: $basic_white;
-
-	font-family: $oswald;
-	text-transform: uppercase;
-
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-
-	min-width: 280px;
-	min-height: 40px;
-
-	&:hover {
-		background-color: $basic_green-2;
-	}
-	&:active {
-		color: rgba($basic_white, 0.3%);
-	}
+	margin: 0;
 }

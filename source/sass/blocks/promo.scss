@@ -1,6 +1,12 @@
 .promo {
 	background-color: $basic_green;
 	color: $basic_white;
+
+	padding-top: 27px;
+}
+
+.promo__title {
+	margin-bottom: 25px;
 }
 
 .promo__tagline {

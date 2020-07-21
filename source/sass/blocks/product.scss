@@ -1,0 +1,20 @@
+.product {
+	border-top: 1px solid $special-grey-2;
+	padding-top: 19px;
+	padding-bottom: 25px;
+}
+
+.product__title-link {
+	color: $special_dark-grey-2;
+}
+
+.product__title {
+	font-family: $oswald;
+	@include font-prop(16px, 20px);
+	font-weight: 400;
+	text-transform: uppercase;
+}
+
+.product__info {
+	@include font-prop(12px, 16px);
+}
