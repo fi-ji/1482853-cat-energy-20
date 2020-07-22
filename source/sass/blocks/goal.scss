@@ -1,12 +1,12 @@
 .goal {
-  background-color: $basic_grey;
+  background-color: $color-secondary;
 
   padding-top: 21px;
   padding-bottom: 18px;
 }
 
 .goal__title {
-  color: $basic_black;
+  color: $color-lg-txt;
 
   font-family: $oswald;
 
@@ -18,12 +18,12 @@
 }
 
 .goal__txt {
-  border-bottom: 1px solid $special_grey-4;
+  border-bottom: 1px solid $color-secondary-border;
   padding-bottom: 23px;
 }
 
 .goal__link {
-  color: $basic_black;
+  color: $color-lg-txt;
 
   font-family: $oswald;
 
@@ -31,6 +31,6 @@
   text-transform: uppercase;
 
   &:active {
-    color: rgba($basic_black, 0.3%);
+    color: rgba($color-lg-txt, 0.3%);
   }
 }

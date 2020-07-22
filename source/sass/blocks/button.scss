@@ -1,6 +1,6 @@
 .button {
-  background-color: $basic_green;
-  color: $basic_white;
+  background-color: $color-primary;
+  color: $color-contrast-txt;
 
   font-family: $oswald;
 
@@ -16,24 +16,24 @@
 
   &:hover,
   &:focus {
-    background-color: $basic_green-2;
+    background-color: $color-primary-dark;
   }
 
   &:active {
-    color: rgba($basic_white, 0.3%);
+    color: rgba($color-contrast-txt, 0.3%);
   }
 }
 
 .button--simple {
-  background-color: $basic_grey;
-  color: $special_dark-grey;
+  background-color: $color-secondary;
+  color: $color-small-txt;
 
   &:hover,
   &:focus {
-    background-color: $special_grey-2;
+    background-color: $color-secondary-dark;
   }
 
   &:active {
-    color: rgba($special_dark-grey, 0.3%);
+    color: rgba($color-small-txt, 0.3%);
   }
 }

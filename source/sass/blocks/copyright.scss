@@ -3,11 +3,11 @@
 }
 
 .copyright__link {
-  color: $special_dark-grey;
+  color: $color-small-txt;
 
   @include font-prop (16px, 18px);
 
   &:active {
-    color: rgba($special_dark-grey, 0.3%);
+    color: rgba($color-small-txt, 0.3%);
   }
 }

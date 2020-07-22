@@ -1,18 +1,18 @@
 .catalog__title {
-  color: $basic_black;
+  color: $color-lg-txt;
   margin-top: 27px;
   margin-bottom: 41px;
 }
 
 .catalog__item {
-  border-top: 1px solid $special_grey-2;
-  border-bottom: 1px solid $special_grey-2;
+  border-top: 1px solid $color-secondary-dark;
+  border-bottom: 1px solid $color-secondary-dark;
   padding-top: 26px;
   padding-bottom: 25px;
 }
 
 .catalog__title-link {
-  color: $basic_black-2;
+  color: #111111;
 
   font-family: $oswald;
 
