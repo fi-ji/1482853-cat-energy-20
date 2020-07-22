@@ -1,9 +1,10 @@
 .page__body {
-	color: $special_dark-grey;
+  color: $special_dark-grey;
 
-	font-family: $arial;
-	@include font-prop (14px, 18px);
+  font-family: $arial;
 
-	padding: 0;
-	margin: 0;
+  @include font-prop (14px, 18px);
+
+  padding: 0;
+  margin: 0;
 }

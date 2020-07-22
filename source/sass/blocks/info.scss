@@ -1,11 +1,12 @@
 .info__title {
-	color: $basic_black;
+  color: $basic_black;
 
-	font-family: $oswald;
-	@include font-prop(36px, 40px);
-	font-weight: 400;
+  font-family: $oswald;
+
+  @include font-prop(36px, 40px);
+  font-weight: 400;
 }
 
 .info__item {
-	padding-bottom: 24px;
+  padding-bottom: 24px;
 }

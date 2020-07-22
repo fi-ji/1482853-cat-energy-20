@@ -1,13 +1,13 @@
 .copyright {
-	padding-top: 22px;
+  padding-top: 22px;
 }
 
 .copyright__link {
-	color: $special_dark-grey;
+  color: $special_dark-grey;
 
-	@include font-prop (16px, 18px);
+  @include font-prop (16px, 18px);
 
-	&:active {
-		color: rgba($special_dark-grey, 0.3%);
-	}
+  &:active {
+    color: rgba($special_dark-grey, 0.3%);
+  }
 }

@@ -1,34 +1,36 @@
 .goal {
-	background-color: $basic_grey;
+  background-color: $basic_grey;
 
-	padding-top: 21px;
-	padding-bottom: 18px;
+  padding-top: 21px;
+  padding-bottom: 18px;
 }
 
 .goal__title {
-	color: $basic_black;
+  color: $basic_black;
 
-	font-family: $oswald;
-	@include font-prop(24px, 37px);
-	font-weight: 400;
-	text-transform: uppercase;
+  font-family: $oswald;
 
-	margin: 0;
+  @include font-prop(24px, 37px);
+  font-weight: 400;
+  text-transform: uppercase;
+
+  margin: 0;
 }
 
 .goal__txt {
-	border-bottom: 1px solid $special_grey-4;
-	padding-bottom: 23px;
+  border-bottom: 1px solid $special_grey-4;
+  padding-bottom: 23px;
 }
 
 .goal__link {
-	color: $basic_black;
+  color: $basic_black;
 
-	font-family: $oswald;
-	@include font-prop(16px, 16px);
-	text-transform: uppercase;
+  font-family: $oswald;
 
-	&:active {
-		color: rgba($basic_black, 0.3%);
-	}
+  @include font-prop(16px, 16px);
+  text-transform: uppercase;
+
+  &:active {
+    color: rgba($basic_black, 0.3%);
+  }
 }

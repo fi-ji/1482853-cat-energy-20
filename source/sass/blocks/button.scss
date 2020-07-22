@@ -1,36 +1,39 @@
 .button {
-	background-color: $basic_green;
-	color: $basic_white;
+  background-color: $basic_green;
+  color: $basic_white;
 
-	font-family: $oswald;
-	@include font-prop(16px, 0);
-	text-transform: uppercase;
+  font-family: $oswald;
 
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
+  @include font-prop(16px, 0);
+  text-transform: uppercase;
 
-	min-width: 280px;
-	min-height: 40px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 
-	&:hover,
-	&:focus {
-		background-color: $basic_green-2;
-	}
-	&:active {
-		color: rgba($basic_white, 0.3%);
-	}
+  min-width: 280px;
+  min-height: 40px;
+
+  &:hover,
+  &:focus {
+    background-color: $basic_green-2;
+  }
+
+  &:active {
+    color: rgba($basic_white, 0.3%);
+  }
 }
 
 .button--simple {
-	background-color: $basic_grey;
-	color: $special_dark-grey;
+  background-color: $basic_grey;
+  color: $special_dark-grey;
 
-	&:hover,
-	&:focus {
-		background-color: $special_grey-2;
-	}
-	&:active {
-		color: rgba($special_dark-grey, 0.3%);
-	}
+  &:hover,
+  &:focus {
+    background-color: $special_grey-2;
+  }
+
+  &:active {
+    color: rgba($special_dark-grey, 0.3%);
+  }
 }
