@@ -1,3 +1,11 @@
+.contacts {
+  background-color: $color-secondary;
+
+  &--index {
+    background-color: $color-contrast;
+  }
+}
+
 .contacts__title {
   color: #111111;
 
