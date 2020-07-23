@@ -1,0 +1,36 @@
+.goal {
+  background-color: $color-secondary;
+
+  padding-top: 21px;
+  padding-bottom: 18px;
+}
+
+.goal__title {
+  color: $color-lg-txt;
+
+  font-family: $oswald;
+
+  @include font-prop(24px, 37px);
+  font-weight: 400;
+  text-transform: uppercase;
+
+  margin: 0;
+}
+
+.goal__txt {
+  border-bottom: 1px solid $color-secondary-border;
+  padding-bottom: 23px;
+}
+
+.goal__link {
+  color: $color-lg-txt;
+
+  font-family: $oswald;
+
+  @include font-prop(16px, 16px);
+  text-transform: uppercase;
+
+  &:active {
+    color: rgba($color-lg-txt, 0.3%);
+  }
+}

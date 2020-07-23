@@ -1,0 +1,12 @@
+.info__title {
+  color: $color-lg-txt;
+
+  font-family: $oswald;
+
+  @include font-prop(36px, 40px);
+  font-weight: 400;
+}
+
+.info__item {
+  padding-bottom: 24px;
+}

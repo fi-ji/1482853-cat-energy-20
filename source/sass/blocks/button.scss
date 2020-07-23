@@ -1,0 +1,39 @@
+.button {
+  background-color: $color-primary;
+  color: $color-contrast-txt;
+
+  font-family: $oswald;
+
+  @include font-prop(16px, 0);
+  text-transform: uppercase;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  min-width: 280px;
+  min-height: 40px;
+
+  &:hover,
+  &:focus {
+    background-color: $color-primary-dark;
+  }
+
+  &:active {
+    color: rgba($color-contrast-txt, 0.3%);
+  }
+}
+
+.button--simple {
+  background-color: $color-secondary;
+  color: $color-small-txt;
+
+  &:hover,
+  &:focus {
+    background-color: $color-secondary-dark;
+  }
+
+  &:active {
+    color: rgba($color-small-txt, 0.3%);
+  }
+}

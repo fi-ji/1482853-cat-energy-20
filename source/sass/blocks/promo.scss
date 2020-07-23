@@ -1,0 +1,16 @@
+.promo {
+  background-color: $color-primary;
+  color: $color-contrast-txt;
+
+  padding-top: 27px;
+}
+
+.promo__title {
+  margin-bottom: 25px;
+}
+
+.promo__tagline {
+  font-family: $oswald;
+  line-height: 14px;
+  text-transform: uppercase;
+}

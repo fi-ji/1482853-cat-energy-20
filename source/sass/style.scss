@@ -1,1 +1,28 @@
-// Начните писать стили здесь
+@import "../../node_modules/normalize-scss/sass/normalize";
+@include normalize();
+@import "fonts.scss";
+@import "variables.scss";
+@import "mixins.scss";
+@import "global.scss";
+
+// Blocks
+// Global blocks
+
+@import "blocks/page.scss";
+@import "blocks/header.scss";
+@import "blocks/site-list.scss";
+@import "blocks/button.scss";
+@import "blocks/footer.scss";
+@import "blocks/social.scss";
+@import "blocks/copyright.scss";
+
+// Index
+
+@import "blocks/promo.scss";
+@import "blocks/goal.scss";
+@import "blocks/info.scss";
+
+// Catalog
+
+@import "blocks/catalog.scss";
+@import "blocks/product.scss";

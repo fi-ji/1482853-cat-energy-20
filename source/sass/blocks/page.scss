@@ -1,0 +1,10 @@
+.page__body {
+  color: $color-small-txt;
+
+  font-family: $arial;
+
+  @include font-prop (14px, 18px);
+
+  padding: 0;
+  margin: 0;
+}
