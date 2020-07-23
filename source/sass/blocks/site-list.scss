@@ -1,5 +1,7 @@
 .site-list {
   font-family: $oswald;
+
+  @include list-reset;
 }
 
 .site-list__item {

@@ -4,6 +4,10 @@
   margin-bottom: 41px;
 }
 
+.catalog__list {
+  @include list-reset;
+}
+
 .catalog__item {
   border-top: 1px solid $color-secondary-dark;
   border-bottom: 1px solid $color-secondary-dark;
