@@ -1,0 +1,42 @@
+.extra__title {
+  color: $color-lg-txt;
+
+  font-family: $oswald;
+  font-weight: 400;
+
+  @include font-prop(24px, 24px);
+}
+
+.extra__list {
+  @include list-reset;
+
+  border-bottom: 1px solid #cdcdcd;
+}
+
+.extra__item {
+  border-top: 1px solid #cdcdcd;
+  padding-bottom: 19px;
+}
+
+.extra__item-title {
+  color: #222222;
+
+  font-family: $oswald;
+  font-weight: 400;
+  text-transform: uppercase;
+
+  @include font-prop(16px, 16px);
+}
+
+.extra__info {
+  line-height: 14px;
+}
+
+.extra__promo {
+  background-color: $color-primary;
+  color: $color-contrast;
+}
+
+.extra__promo-txt {
+  @include font-prop(16px, 20px);
+}

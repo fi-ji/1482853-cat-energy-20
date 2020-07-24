@@ -2,9 +2,13 @@
   color: $color-lg-txt;
 
   font-family: $oswald;
+  font-weight: 400;
 
   @include font-prop(36px, 40px);
-  font-weight: 400;
+}
+
+.info__list {
+  @include list-reset;
 }
 
 .info__item {

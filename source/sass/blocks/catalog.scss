@@ -1,7 +1,15 @@
+.catalog {
+  border-top: 1px solid #d9d9d9;
+}
+
 .catalog__title {
   color: $color-lg-txt;
   margin-top: 27px;
   margin-bottom: 41px;
+}
+
+.catalog__list {
+  @include list-reset;
 }
 
 .catalog__item {

@@ -1,0 +1,60 @@
+.example {
+  background-color: #eaeaea;
+}
+
+.example__title {
+  color: $color-lg-txt;
+
+  font-family: $oswald;
+  font-weight: 400;
+
+  @include font-prop(36px, 40px);
+}
+
+.example__item--total {
+  color: $color-lg-txt;
+
+  font-family: $oswald;
+  text-transform: uppercase;
+
+  @include font-prop(14px, 20px);
+}
+
+.example__term {
+  @include font-prop(12px, 12px);
+}
+
+.example__result {
+  color: $color-lg-txt;
+
+  font-family: $oswald;
+  text-transform: uppercase;
+
+  @include font-prop(24px, 24px);
+}
+
+.example__slider-button {
+  background-color: transparent;
+  color: $color-lg-txt;
+
+  font-family: $oswald;
+  text-transform: uppercase;
+
+  border: none;
+
+  @include font-prop(16px, 20px);
+}
+
+.example__scale {
+  width: 84px;
+  height: 14px;
+  border: 1px solid #cdcdcd;
+  border-radius: 6px;
+}
+
+.example__bar {
+  background-color: $color-primary;
+  width: 42%;
+  height: 6px;
+  border-radius: 6px;
+}
