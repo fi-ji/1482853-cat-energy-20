@@ -4,4 +4,33 @@
   @include font-prop(20px, 20px);
   font-weight: 500;
   text-transform: uppercase;
+
+  @media (min-width: $tablet-width) {
+    @include font-prop(18px, 24px);
+  }
+
+  @media (min-width: $desktop-width) {
+    @include font-prop(20px, 30px);
+  }
+}
+
+.header__wrapper {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $tablet-width) {
+    flex-direction: row;
+    justify-content: space-between;
+
+    @include wrapper-tablet;
+    margin: 0 auto;
+  }
+
+  @media (min-width: $desktop-width) {
+    @include wrapper-desktop;
+  }
+}
+
+.header__logo {
+  align-self: center;
 }

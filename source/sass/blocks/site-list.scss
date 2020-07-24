@@ -2,12 +2,24 @@
   font-family: $oswald;
 
   @include list-reset;
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+  }
 }
 
 .site-list__item {
+  display: flex;
+  justify-content: center;
+
   border-top: 1px solid #e6e6e6;
   padding-top: 22px;
   padding-bottom: 24px;
+
+  @media (min-width: $tablet-width) {
+    border-top: none;
+    margin-left: 34px;
+  }
 }
 
 .site-list__link {
@@ -23,6 +35,8 @@
   }
 
   &:not([href]) {
-    border-bottom: 2px solid $color-primary;
+    @media (min-width: $tablet-width) {
+      border-bottom: 2px solid $color-primary;
+    }
   }
 }

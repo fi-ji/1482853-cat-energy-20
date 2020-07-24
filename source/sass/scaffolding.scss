@@ -38,4 +38,8 @@ input[type="radio"].visually-hidden {
   font-weight: 400;
 
   margin: 0;
+
+  @media (min-width: $tablet-width) {
+    @include font-prop(60px, 60px);
+  }
 }

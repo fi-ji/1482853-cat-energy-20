@@ -1,8 +1,15 @@
 .social {
+  display: flex;
+  column-gap: 27px;
+
   border-top: 1px solid $color-secondary-border;
   border-bottom: 1px solid $color-secondary-border;
   padding-top: 20px;
   padding-bottom: 21px;
 
   @include list-reset;
+
+  @media (min-width: $tablet-width) {
+    border: none;
+  }
 }
