@@ -34,3 +34,9 @@
 .header__logo {
   align-self: center;
 }
+
+.header__toggle {
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+}

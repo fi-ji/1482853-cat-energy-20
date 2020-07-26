@@ -1,3 +1,16 @@
+.extra__wrapper {
+  @include wrapper-mobile;
+  margin: 0 auto;
+
+  @media (min-width: $tablet-width) {
+    @include wrapper-tablet;
+  }
+
+  @media (min-width: $desktop-width) {
+    @include wrapper-desktop;
+  }
+}
+
 .extra__title {
   color: $color-lg-txt;
 
@@ -5,17 +18,66 @@
   font-weight: 400;
 
   @include font-prop(24px, 24px);
+
+  @media (min-width: $tablet-width) {
+    @include font-prop(36px, 36px);
+  }
+}
+
+.extra__container {
+  display: grid;
+
+  @media (min-width: $desktop-width) {
+    grid-template-columns: 3fr 1fr;
+    column-gap: 79px;
+
+    padding-bottom: 86px;
+  }
 }
 
 .extra__list {
   @include list-reset;
 
+  border-top: 1px solid #cdcdcd;
   border-bottom: 1px solid #cdcdcd;
+  padding-top: 13px;
+  margin-bottom: 39px;
+
+  @media (min-width: $tablet-width) {
+    border: 1px solid #cdcdcd;
+    padding-top: 26px;
+    padding-bottom: 28px;
+    padding-left: 38px;
+    padding-right: 37px;
+    margin-bottom: 69px;
+  }
+
+  @media (min-width: $desktop-width) {
+    border: none;
+    padding-top: 15px;
+    padding-bottom: 17px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 0;
+  }
 }
 
 .extra__item {
-  border-top: 1px solid #cdcdcd;
-  padding-bottom: 19px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #cdcdcd;
+    padding-bottom: 19px;
+    margin-bottom: 25px;
+  }
+
+  @media (min-width: $tablet-width) {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
 }
 
 .extra__item-title {
@@ -25,16 +87,51 @@
   font-weight: 400;
   text-transform: uppercase;
 
+  margin: 0;
+  margin-bottom: 16px;
+
   @include font-prop(16px, 16px);
 }
 
 .extra__info {
   line-height: 14px;
+
+  width: 100%;
+  margin-left: auto;
+  margin-bottom: 15px;
+
+  @media (min-width: $tablet-width) {
+    width: auto;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 286px;
+  }
+}
+
+.extra__info-row {
+  display: flex;
+  justify-content: space-between;
+
+  td:not(:last-child) {
+    margin-right: 51px;
+  }
+}
+
+.extra__link {
+  width: 100%;
+
+  @media (min-width: $desktop-width) {
+    flex-basis: 244px;
+    margin-left: 40px;
+  }
 }
 
 .extra__promo {
   background-color: $color-primary;
   color: $color-contrast;
+
+  text-align: center;
 }
 
 .extra__promo-txt {

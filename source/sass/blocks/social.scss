@@ -6,8 +6,9 @@
   border-bottom: 1px solid $color-secondary-border;
   padding-top: 20px;
   padding-bottom: 21px;
+  margin: 0;
 
-  @include list-reset;
+  list-style: none;
 
   @media (min-width: $tablet-width) {
     border: none;
