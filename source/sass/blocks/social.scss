@@ -1,6 +1,5 @@
 .social {
   display: flex;
-  column-gap: 27px;
 
   border-top: 1px solid $color-secondary-border;
   border-bottom: 1px solid $color-secondary-border;
@@ -13,4 +12,8 @@
   @media (min-width: $tablet-width) {
     border: none;
   }
+}
+
+.social__item:not(:last-child) {
+  margin-right: 27px;
 }

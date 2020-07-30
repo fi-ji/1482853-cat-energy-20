@@ -6,19 +6,6 @@
   }
 }
 
-.catalog__wrapper {
-  @include wrapper-mobile;
-  margin: 0 auto;
-
-  @media (min-width: $tablet-width) {
-    @include wrapper-tablet;
-  }
-
-  @media (min-width: $desktop-width) {
-    @include wrapper-desktop;
-  }
-}
-
 .catalog__title {
   color: $color-lg-txt;
   margin-top: 27px;
@@ -52,7 +39,6 @@
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
-    row-gap: 22px;
 
     padding-top: 26px;
     padding-bottom: 25px;

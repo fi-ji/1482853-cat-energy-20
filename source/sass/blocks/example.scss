@@ -3,17 +3,7 @@
 }
 
 .example__wrapper {
-  @include wrapper-mobile;
   padding-top: 27px;
-  margin: 0 auto;
-
-  @media (min-width: $tablet-width) {
-    @include wrapper-tablet;
-  }
-
-  @media (min-width: $desktop-width) {
-    @include wrapper-desktop;
-  }
 }
 
 .example__title {
@@ -33,13 +23,15 @@
 .example__list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  column-gap: 30px;
-  row-gap: 26px;
 
   @media (min-width: $desktop-width) {
     width: 436px;
   }
+}
+
+.example__item {
+  flex-grow: 1;
+  margin-bottom: 26px;
 }
 
 .example__item--total {
@@ -95,7 +87,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  column-gap: 12px;
 }
 
 .example__slider-button {
@@ -121,6 +112,8 @@
   height: 14px;
   border: 1px solid #cdcdcd;
   border-radius: 6px;
+  margin-left: 12px;
+  margin-right: 12px;
 
   @media (min-width: $tablet-width) {
     background-color: #dcdcdc;

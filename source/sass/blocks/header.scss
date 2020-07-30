@@ -15,24 +15,18 @@
 }
 
 .header__wrapper {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  align-items: center;
 
   @media (min-width: $tablet-width) {
-    flex-direction: row;
-    justify-content: space-between;
-
-    @include wrapper-tablet;
-    margin: 0 auto;
-  }
-
-  @media (min-width: $desktop-width) {
-    @include wrapper-desktop;
+    grid-template-columns: 1fr 3fr;
   }
 }
 
-.header__logo {
-  align-self: center;
+.header__navigation {
+  @media (min-width: $tablet-width) {
+    justify-self: end;
+  }
 }
 
 .header__toggle {
@@ -40,3 +34,4 @@
     display: none;
   }
 }
+

@@ -31,6 +31,19 @@ input[type="radio"].visually-hidden {
   overflow: hidden;
 }
 
+.container {
+  @include wrapper-mobile;
+  margin: 0 auto;
+
+  @media (min-width: $tablet-width) {
+    @include wrapper-tablet;
+  }
+
+  @media (min-width: $desktop-width) {
+    @include wrapper-desktop;
+  }
+}
+
 .main-title {
   font-family: $oswald;
 

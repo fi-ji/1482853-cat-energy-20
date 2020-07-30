@@ -6,22 +6,18 @@
 }
 
 .footer__wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  justify-items: center;
   row-gap: 22px;
 
-  @include wrapper-mobile;
-  margin: 0 auto;
-
   @media (min-width: $tablet-width) {
-    flex-direction: row;
-    justify-content: space-between;
-
-    @include wrapper-tablet;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
   }
+}
 
-  @media (min-width: $desktop-width) {
-    @include wrapper-desktop;
+.footer__logo {
+  @media (min-width: $tablet-width) {
+    justify-self: start;
   }
 }

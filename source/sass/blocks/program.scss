@@ -6,19 +6,6 @@
   }
 }
 
-.program__wrapper {
-  @include wrapper-mobile;
-  margin: 0 auto;
-
-  @media (min-width: $tablet-width) {
-    @include wrapper-tablet;
-  }
-
-  @media (min-width: $desktop-width) {
-    @include wrapper-desktop;
-  }
-}
-
 .program__title {
   color: $color-lg-txt;
 

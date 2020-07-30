@@ -1,21 +1,13 @@
 .goals__wrapper {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   row-gap: 20px;
 
-  @include wrapper-mobile;
-  margin: 0 auto;
-
   @media (min-width: $tablet-width) {
-    @include wrapper-tablet;
-
     row-gap: 30px;
   }
 
   @media (min-width: $desktop-width) {
-    @include wrapper-desktop;
-
-    flex-direction: row;
+    grid-template-columns: 1fr 1fr;
     column-gap: 80px;
   }
 }
