@@ -1,5 +1,15 @@
 .copyright {
-  padding-top: 22px;
+  justify-self: end;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 281px;
+
+  @media (min-width: $tablet-width) {
+    width: 163px;
+  }
 }
 
 .copyright__link {

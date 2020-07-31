@@ -38,6 +38,7 @@
     "node": "12.18.2"
   },
   "dependencies": {
-    "editorconfig": "^0.15.3"
+    "editorconfig": "^0.15.3",
+    "normalize-scss": "^7.0.1"
   }
 }

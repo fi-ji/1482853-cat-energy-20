@@ -9,7 +9,6 @@
   justify-content: center;
   align-items: center;
 
-  min-width: 280px;
   min-height: 40px;
   border: 0;
 
@@ -22,6 +21,10 @@
 
   &:active {
     color: rgba($color-contrast, 0.3%);
+  }
+
+  @media (max-width: $mobile-width-only) {
+    width: 100%;
   }
 }
 

@@ -3,14 +3,54 @@
   color: $color-contrast;
 
   padding-top: 27px;
+  margin-bottom: 22px;
+}
+
+.promo__wrapper {
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    text-align: left;
+  }
 }
 
 .promo__title {
+  max-width: 414px;
   margin-bottom: 25px;
+
+  @media (min-width: $tablet-width) {
+    margin-left: 87px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-left: 80px;
+  }
 }
 
 .promo__tagline {
   font-family: $oswald;
   line-height: 14px;
   text-transform: uppercase;
+
+  @media (min-width: $tablet-width) {
+    @include font-prop (20px, 20px);
+
+    margin-left: 88px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-left: 80px;
+  }
+}
+
+.promo__link {
+  min-width: 244px;
+
+  @media (min-width: $tablet-width) {
+    margin-left: 82px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-left: 80px;
+  }
 }

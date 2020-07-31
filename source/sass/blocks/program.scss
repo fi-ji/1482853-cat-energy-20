@@ -1,5 +1,9 @@
 .program {
   border-top: 1px solid #d9d9d9;
+
+  @media (min-width: $tablet-width) {
+    border: none;
+  }
 }
 
 .program__title {
@@ -14,6 +18,10 @@
 
   font-family: $oswald;
   text-transform: uppercase;
+
+  @media (min-width: $tablet-width) {
+    @include font-prop(20px, 30px);
+  }
 }
 
 .program__form,
@@ -22,10 +30,44 @@
   text-transform: uppercase;
 
   @include font-prop(16px, 18px);
+
+  @media (min-width: $tablet-width) {
+    @include font-prop (20px, 30px);
+  }
+}
+
+.program__top-row {
+  display: grid;
+
+  @media (min-width: $desktop-width) {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 80px;
+  }
 }
 
 .program__fieldset {
+  width: 100%;
   border: none;
+  padding: 0;
+  margin-bottom: 30px;
+
+  &--goal {
+    border-top: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
+
+    @media (min-width: $tablet-width) {
+      border: 1px solid #e7e7e7;
+    }
+  }
+
+  &--contacts {
+    display: grid;
+
+    @media (min-width: $desktop-width) {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 78px;
+    }
+  }
 }
 
 .program__fieldset-title {
@@ -36,13 +78,30 @@
   margin-bottom: 34px;
 
   @include font-prop(24px, 26px);
+
+  @media (min-width: $tablet-width) {
+    @include font-prop(36px, 36px);
+  }
+}
+
+.program__field {
+  display: flex;
+  align-items: center;
+}
+
+.program__label {
+  flex-shrink: 0;
+  margin-right: 14px;
 }
 
 .program__input {
+  flex-grow: 1;
+
+  min-width: 172px;
   height: 45px;
   border: 1px solid #e7e7e7;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 13px;
+  padding-right: 13px;
 
   &--textarea {
     width: 100%;
@@ -90,19 +149,42 @@
   &--goals {
     color: #222222;
 
-    border-top: 1px solid #d9d9d9;
-    border-bottom: 1px solid #d9d9d9;
     padding-top: 22px;
     padding-bottom: 20px;
   }
 
   &--extra {
     color: $color-lg-txt;
+    display: grid;
+
+    @media (min-width: $tablet-width) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width: $desktop-width) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
   }
 }
 
 .program__item:not(:last-child) {
   padding-bottom: 20px;
+}
+
+.program__last-row {
+  display: grid;
+
+  @media (min-width: $tablet-width) {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    column-gap: 61px;
+  }
+}
+
+.program__submit {
+  @media (min-width: $tablet-width) {
+    font-size: 20px;
+  }
 }
 
 .program__legend {
@@ -112,4 +194,12 @@
   text-transform: none;
 
   @include font-prop(14px, 16px);
+
+  @media (min-width: $tablet-width) {
+    font-size: 16px;
+  }
+
+  @media (min-width: $desktop-width) {
+    display: none;
+  }
 }

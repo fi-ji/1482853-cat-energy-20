@@ -2,6 +2,10 @@
   background-color: #eaeaea;
 }
 
+.example__wrapper {
+  padding-top: 27px;
+}
+
 .example__title {
   color: $color-lg-txt;
 
@@ -9,6 +13,25 @@
   font-weight: 400;
 
   @include font-prop(36px, 40px);
+  margin: 0;
+
+  @media (min-width: $tablet-width) {
+    @include font-prop(60px, 60px);
+  }
+}
+
+.example__list {
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (min-width: $desktop-width) {
+    width: 436px;
+  }
+}
+
+.example__item {
+  flex-grow: 1;
+  margin-bottom: 26px;
 }
 
 .example__item--total {
@@ -18,10 +41,31 @@
   text-transform: uppercase;
 
   @include font-prop(14px, 20px);
+
+  display: flex;
+
+  @media (min-width: $tablet-width) {
+    @include font-prop(20px, 20px);
+
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  @media (min-width: $desktop-width) {
+    flex-direction: row;
+  }
+
+  dd {
+    margin: 0;
+  }
 }
 
 .example__term {
   @include font-prop(12px, 12px);
+
+  @media (min-width: $tablet-width) {
+    @include font-prop(14px, 14px);
+  }
 }
 
 .example__result {
@@ -31,6 +75,18 @@
   text-transform: uppercase;
 
   @include font-prop(24px, 24px);
+
+  @media (min-width: $tablet-width) {
+    @include font-prop(30px, 37px);
+  }
+
+  margin: 0;
+}
+
+.example__slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .example__slider-button {
@@ -41,8 +97,14 @@
   text-transform: uppercase;
 
   border: none;
+  padding: 0;
 
   @include font-prop(16px, 20px);
+
+  @media (min-width: $tablet-width) {
+    @include font-prop(20px, 30px);
+    border-bottom: 1px dotted rgba($color-lg-txt, 0.24%);
+  }
 }
 
 .example__scale {
@@ -50,6 +112,15 @@
   height: 14px;
   border: 1px solid #cdcdcd;
   border-radius: 6px;
+  margin-left: 12px;
+  margin-right: 12px;
+
+  @media (min-width: $tablet-width) {
+    background-color: #dcdcdc;
+    width: 428px;
+    height: 6px;
+    border: none;
+  }
 }
 
 .example__bar {
@@ -57,4 +128,24 @@
   width: 42%;
   height: 6px;
   border-radius: 6px;
+
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+}
+
+.example__toggle {
+  background-color: $color-primary;
+
+  width: 34px;
+  height: 34px;
+  border: 13px solid $color-contrast;
+  border-radius: 50%;
+  padding: 0;
+
+  filter: drop-shadow(0 1px 3px rgba($color-lg-txt, 0.16%));
+
+  @media (max-width: $mobile-width-only) {
+    display: none;
+  }
 }

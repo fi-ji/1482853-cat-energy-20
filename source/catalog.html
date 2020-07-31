@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Кэт энерджи: Каталог продукции</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -10,9 +11,9 @@
 <body class="page__body">
 
   <header class="header">
-    <div class="header__wrapper">
+    <div class="header__wrapper container">
       <a class="header__logo logo" href="index.html">
-        <img src="https://via.placeholder.com/150x150">
+        <img src="img/logo-mobile.svg" width="190" height="38" alt="Логотип Cat Energy">
       </a>
 
       <nav class="header__navigation">
@@ -32,13 +33,13 @@
   <main class="main">
 
     <section class="catalog">
-      <div class="catalog__wrapper">
+      <div class="catalog__wrapper container">
         <h1 class="catalog__title main-title">Каталог продукции</h1>
 
         <ul class="catalog__list">
           <li class="catalog__item product">
             <a class="product__img-link" href="#">
-              <img src="https://via.placeholder.com/150x150">
+              <img src="img/chicken-small-mobile@1x.jpg" width="140" height="112" alt="Маленькая упаковка продукта">
             </a>
 
             <div class="product__content-wrapper">
@@ -66,7 +67,7 @@
           </li>
           <li class="catalog__item product">
             <a class="product__img-link" href="#">
-              <img src="https://via.placeholder.com/150x150">
+              <img src="img/chicken-big-mobile@1x.jpg" width="140" height="112" alt="Большая упаковка продукта">
             </a>
 
             <div class="product__content-wrapper">
@@ -94,7 +95,7 @@
           </li>
           <li class="catalog__item product">
             <a class="product__img-link" href="#">
-              <img src="https://via.placeholder.com/150x150">
+              <img src="img/fish-small-mobile@1x.jpg" width="140" height="112" alt="Маленькая упаковка продукта">
             </a>
 
             <div class="product__content-wrapper">
@@ -122,7 +123,7 @@
           </li>
           <li class="catalog__item product">
             <a class="product__img-link" href="#">
-              <img src="https://via.placeholder.com/150x150">
+              <img src="img/fish-big-mobile@1x.jpg" width="140" height="112" alt="Большая упаковка продукта">
             </a>
 
             <div class="product__content-wrapper">
@@ -150,7 +151,7 @@
           </li>
           <li class="catalog__item product">
             <a class="product__img-link" href="#">
-              <img src="https://via.placeholder.com/150x150">
+              <img src="img/buckwheat-small-mobile@1x.jpg" width="140" height="112" alt="Маленькая упаковка продукта">
             </a>
 
             <div class="product__content-wrapper">
@@ -178,7 +179,7 @@
           </li>
           <li class="catalog__item product">
             <a class="product__img-link" href="#">
-              <img src="https://via.placeholder.com/150x150">
+              <img src="img/buckwheat-big-mobile@1x.jpg" width="140" height="112" alt="Большая упаковка продукта">
             </a>
 
             <div class="product__content-wrapper">
@@ -206,7 +207,7 @@
           </li>
           <li class="catalog__item product">
             <a class="product__img-link" href="#">
-              <img src="https://via.placeholder.com/150x150">
+              <img src="img/rice-small-mobile@1x.jpg" width="140" height="112" alt="Маленькая упаковка продукта">
             </a>
 
             <div class="product__content-wrapper">
@@ -232,74 +233,75 @@
 
             <a class="product__link button" href="#">Заказать</a>
           </li>
+          <li class="catalog__item catalog__item--more">
+            <a class="catalog__icon-link" href="#"><span class="visually-hidden">Больше</span></a>
+            <a class="catalog__title-link" href="#">Показать еще 100500 товаров</a>
+            <p class="catalog__txt">На самом деле вкусов гораздо больше!</p>
+            <a class="catalog__link button button--simple" href="#">Показать все</a>
+          </li>
         </ul>
-
-        <div class="catalog__item">
-          <a class="catalog__icon-link" href="#"><span class="visually-hidden">Больше</span></a>
-          <a class="catalog__title-link" href="#">Показать еще 100500 товаров</a>
-          <p class="catalog__txt">На самом деле вкусов гораздо больше!</p>
-          <a class="catalog__link button button--simple" href="#">Показать все</a>
-        </div>
       </div>
     </section>
 
     <section class="extra">
-      <div class="extra__wrapper">
+      <div class="extra__wrapper container">
         <h2 class="extra__title">Дополнительные товары</h2>
 
-        <ul class="extra__list">
-          <li class="extra__item">
-            <h3 class="extra__item-title">Сахарозаменитель</h3>
+        <div class="extra__container">
+          <ul class="extra__list">
+            <li class="extra__item">
+              <h3 class="extra__item-title">Сахарозаменитель</h3>
 
-            <table class="extra__info">
-              <tr>
-                <td>1 упаковка (100 г)</td>
-                <td>200 р.</td>
-              </tr>
-            </table>
+              <table class="extra__info">
+                <tr class="extra__info-row">
+                  <td>1 упаковка (100 г)</td>
+                  <td>200 р.</td>
+                </tr>
+              </table>
 
-            <a class="extra__link button" href="#">Заказать</a>
-          </li>
-          <li class="extra__item">
-            <h3 class="extra__item-title">Питьевая вода</h3>
+              <a class="extra__link button" href="#">Заказать</a>
+            </li>
+            <li class="extra__item">
+              <h3 class="extra__item-title">Питьевая вода</h3>
 
-            <table class="extra__info">
-              <tr>
-                <td>5 литров</td>
-                <td>50 р.</td>
-              </tr>
-            </table>
+              <table class="extra__info">
+                <tr class="extra__info-row">
+                  <td>5 литров</td>
+                  <td>50 р.</td>
+                </tr>
+              </table>
 
-            <a class="extra__link button" href="#">Заказать</a>
-          </li>
-          <li class="extra__item">
-            <h3 class="extra__item-title">Молоко</h3>
+              <a class="extra__link button" href="#">Заказать</a>
+            </li>
+            <li class="extra__item">
+              <h3 class="extra__item-title">Молоко</h3>
 
-            <table class="extra__info">
-              <tr>
-                <td>1 литр</td>
-                <td>100 р.</td>
-              </tr>
-            </table>
+              <table class="extra__info">
+                <tr class="extra__info-row">
+                  <td>1 литр</td>
+                  <td>100 р.</td>
+                </tr>
+              </table>
 
-            <a class="extra__link button" href="#">Заказать</a>
-          </li>
-          <li class="extra__item">
-            <h3 class="extra__item-title">Витамины</h3>
+              <a class="extra__link button" href="#">Заказать</a>
+            </li>
+            <li class="extra__item">
+              <h3 class="extra__item-title">Витамины</h3>
 
-            <table class="extra__info">
-              <tr>
-                <td>1 упаковка (30 г)</td>
-                <td>300 р.</td>
-              </tr>
-            </table>
+              <table class="extra__info">
+                <tr class="extra__info-row">
+                  <td>1 упаковка (30 г)</td>
+                  <td>300 р.</td>
+                </tr>
+              </table>
 
-            <a class="extra__link button" href="#">Заказать</a>
-          </li>
-        </ul>
+              <a class="extra__link button" href="#">Заказать</a>
+            </li>
+          </ul>
 
-        <div class="extra__promo">
-          <p class="extra__promo-txt">Закажите все и получите чехол для кота в подарок!</p>
+          <div class="extra__promo">
+            <p class="extra__promo-txt">Закажите все и получите чехол для кота в подарок!</p>
+          </div>
         </div>
       </div>
     </section>
@@ -319,29 +321,31 @@
       </div>
 
       <div class="contacts__map-wrapper">
-        <img src="https://via.placeholder.com/150x150">
+        <img src="https://via.placeholder.com/320x362">
       </div>
     </section>
 
     <section class="footer__bottom-row">
-      <div class="footer__wrapper">
+      <div class="footer__wrapper container">
         <h2 class="visually-hidden">Ccылки</h2>
 
         <a class="footer__logo" href="index.html">
-          <img src="https://via.placeholder.com/150x150">
+          <img src="img/logo-footer.svg" width="128" height="24" alt="Логотип Cat Energy">
         </a>
 
         <ul class="footer__list social">
-          <li><a class="social__link social__link--vk" href="#" target="_blank">Вконтакте</a></li>
-          <li><a class="social__link social__link--instagram" href="#" target="_blank">Instagram</a></li>
-          <li><a class="social__link social__link--facebook" href="#" target="_blank">Facebook</a></li>
+          <li class="social__item"><a class="social__link social__link--vk" href="#" target="_blank">Вконтакте</a></li>
+          <li class="social__item"><a class="social__link social__link--instagram" href="#"
+              target="_blank">Instagram</a></li>
+          <li class="social__item"><a class="social__link social__link--facebook" href="#" target="_blank">Facebook</a>
+          </li>
         </ul>
 
         <div class="footer__copyright copyright">
           <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive" target="_blank">HTML Academy</a>
 
           <a class="copyright__logo-link" href="https://htmlacademy.ru/intensive/adaptive" target="_blank">
-            <img src="https://via.placeholder.com/150x150">
+            <img src="img/htmlacademy.svg" width="27" height="34" alt="Логотип HTML Academy">
           </a>
         </div>
       </div>

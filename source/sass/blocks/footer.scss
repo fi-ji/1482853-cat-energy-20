@@ -4,3 +4,20 @@
   padding-top: 39px;
   padding-bottom: 22px;
 }
+
+.footer__wrapper {
+  display: grid;
+  justify-items: center;
+  row-gap: 22px;
+
+  @media (min-width: $tablet-width) {
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+  }
+}
+
+.footer__logo {
+  @media (min-width: $tablet-width) {
+    justify-self: start;
+  }
+}

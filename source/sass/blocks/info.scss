@@ -5,10 +5,28 @@
   font-weight: 400;
 
   @include font-prop(36px, 40px);
+
+  @media (min-width: $tablet-width) {
+    @include font-prop(60px, 60px);
+  }
 }
 
 .info__list {
   @include list-reset;
+
+  display: grid;
+  row-gap: 20px;
+
+  @media (min-width: $tablet-width) {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 140px;
+    row-gap: 37px;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 80px;
+  }
 }
 
 .info__item {
