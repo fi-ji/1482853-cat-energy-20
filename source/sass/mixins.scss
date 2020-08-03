@@ -11,19 +11,19 @@
 }
 
 @mixin wrapper-mobile {
-  width: 320px;
+  max-width: 480px;
   padding-left: 20px;
   padding-right: 20px;
 }
 
 @mixin wrapper-tablet {
-  width: 768px;
+  max-width: 1024px;
   padding-left: 30px;
   padding-right: 30px;
 }
 
 @mixin wrapper-desktop {
-  width: 1440px;
-  padding-left: 110px;
-  padding-right: 110px;
+  max-width: 1440px;
+  padding-left: 40px;
+  padding-right: 40px;
 }

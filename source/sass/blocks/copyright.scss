@@ -1,6 +1,4 @@
 .copyright {
-  justify-self: end;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -8,7 +6,16 @@
   width: 281px;
 
   @media (min-width: $tablet-width) {
+    justify-self: end;
     width: 163px;
+  }
+
+  &:hover .copyright__logo {
+    fill: $color-primary;
+  }
+
+  &:active {
+    opacity: 0.3;
   }
 }
 
@@ -20,4 +27,13 @@
   &:active {
     color: rgba($color-small-txt, 0.3%);
   }
+}
+
+.copyright__logo-link {
+  width: 27px;
+  height: 34px;
+}
+
+.copyright__logo {
+  fill: #666666;
 }

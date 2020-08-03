@@ -4,13 +4,15 @@
   border-top: 1px solid $color-secondary-border;
   border-bottom: 1px solid $color-secondary-border;
   padding-top: 20px;
-  padding-bottom: 21px;
+  padding-bottom: 24px;
   margin: 0;
+  margin-bottom: 20px;
 
   list-style: none;
 
   @media (min-width: $tablet-width) {
     border: none;
+    margin-bottom: 0;
   }
 }
 
