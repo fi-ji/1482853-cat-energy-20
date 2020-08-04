@@ -12,8 +12,6 @@
   min-height: 40px;
   border: 0;
 
-  @include font-prop(16px, 0);
-
   &:hover,
   &:focus {
     background-color: $color-primary-dark;

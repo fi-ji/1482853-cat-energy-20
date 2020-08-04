@@ -7,6 +7,7 @@
 
   @media (min-width: $tablet-width) {
     @include font-prop(18px, 24px);
+    font-weight: 400;
   }
 
   @media (min-width: $desktop-width) {
@@ -15,11 +16,46 @@
 }
 
 .header__wrapper {
+  position: relative;
+
   display: grid;
+  justify-items: center;
   align-items: center;
 
+  @media (max-width: $mobile-width-only) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   @media (min-width: $tablet-width) {
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: min-content 1fr;
+
+    padding-top: 20px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 47px;
+  }
+}
+
+.header__logo-link {
+  display: inline-flex;
+
+  width: 320px;
+  height: 66px;
+  padding-top: 12px;
+  padding-bottom: 16px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @media (min-width: $tablet-width) {
+    width: 174px;
+    height: 52px;
+    padding: 0;
+  }
+
+  &[href] {
+    cursor: pointer;
   }
 }
 
@@ -30,7 +66,80 @@
 }
 
 .header__toggle {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  display: block;
+  width: 70px;
+  height: 50px;
+
+  cursor: pointer;
+  border: none;
+
   @media (min-width: $tablet-width) {
     display: none;
+  }
+}
+
+.header__navigation--closed .header__toggle::before {
+  content: "";
+  background-color: $color-lg-txt;
+  position: absolute;
+  top: 24px;
+  right: 20px;
+
+  width: 24px;
+  height: 2px;
+  box-shadow: 0 8px 0 0 $color-lg-txt, 0 16px 0 0 $color-lg-txt;
+}
+
+.header__navigation--closed .header__toggle:hover::before {
+  background-color: rgba($color-lg-txt, 0.6%);
+  box-shadow: 0 8px 0 0 rgba($color-lg-txt, 0.6%), 0 16px 0 0 rgba($color-lg-txt, 0.6%);
+}
+
+.header__navigation--closed .header__toggle:active::before {
+  background-color: rgba($color-lg-txt, 0.3%);
+  box-shadow: 0 8px 0 0 rgba($color-lg-txt, 0.3%), 0 16px 0 0 rgba($color-lg-txt, 0.3%);
+}
+
+@media (max-width: $mobile-width-only) {
+  .header__navigation--closed .site-list__item {
+    display: none;
+  }
+}
+
+.header__navigation--opened .header__toggle {
+  &::before,
+  &::after {
+    content: "";
+    background-color: $color-lg-txt;
+
+    position: absolute;
+    top: 30px;
+    right: 20px;
+
+    width: 25px;
+    height: 2px;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &:hover::before,
+  &:hover::after {
+    background-color: rgba($color-lg-txt, 0.6%);
+  }
+
+  &:active::before,
+  &:active::after {
+    background-color: rgba($color-lg-txt, 0.3%);
   }
 }
