@@ -73,12 +73,29 @@
   margin-bottom: 4px;
 
   @media (min-width: $tablet-width) {
+    position: relative;
+    z-index: -1;
+
     order: 1;
+
+    width: 709px;
+    height: auto;
+    margin-top: -82px;
   }
 
   @media (min-width: $desktop-width) {
     position: absolute;
-    left: 50%;
+    left: calc(50% - 163px);
+
+    width: 552px;
+  }
+}
+
+.promo__img {
+  display: block;
+
+  @media (min-width: $tablet-width) {
+    width: 709px;
   }
 }
 

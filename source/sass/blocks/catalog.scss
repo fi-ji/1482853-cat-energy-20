@@ -33,13 +33,15 @@
     grid-template-columns: 1fr 1fr;
     justify-items: center;
     column-gap: 60px;
-    row-gap: 59px;
+    row-gap: 139px;
+
+    padding-top: 124px;
   }
 
   @media (min-width: $desktop-width) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     column-gap: 80px;
-    row-gap: 63px;
+    row-gap: 143px;
   }
 }
 
