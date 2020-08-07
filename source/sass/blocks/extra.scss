@@ -173,9 +173,39 @@
 
 .extra__promo {
   background-color: $color-primary;
-  color: $color-contrast;
+  background-image: url("../img/gift-photo-mobile@1x.jpg");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
 
+  @media (min-resolution: $retina-dppx) {
+    background-image: url("../img/gift-photo-mobile@2x.jpg");
+  }
+
+  color: $color-contrast;
   text-align: center;
+  //временно
+  height: 289px;
+
+  @media (min-width: $tablet-width) {
+    background-image: url("../img/gift-photo-tablet@1x.jpg");
+
+    @media (min-resolution: $retina-dppx) {
+      background-image: url("../img/gift-photo-tablet@2x.jpg");
+    }
+    //временно
+    height: 200px;
+  }
+
+  @media (min-width: $desktop-width) {
+    background-image: url("../img/gift-photo-desktop@1x.jpg");
+
+    @media (min-resolution: $retina-dppx) {
+      background-image: url("../img/gift-photo-desktop@2x.jpg");
+    }
+    //временно
+    height: 289px;
+  }
 }
 
 .extra__promo-txt {

@@ -1,10 +1,56 @@
 .promo {
   background-color: $color-primary;
+  background-image:
+    linear-gradient(0deg, $color-contrast, $color-contrast 16%, transparent 16%),
+    url("../img/index-background-mobile@1x.jpg"),
+    linear-gradient(0deg, $color-contrast, $color-contrast 36%, $color-primary 36%);
+
+  background-size: 100%;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+
+  @media (min-resolution: $retina-dppx) {
+    background-image:
+      linear-gradient(0deg, $color-contrast, $color-contrast 16%, transparent 16%),
+      url("../img/index-background-mobile@2x.jpg"),
+      linear-gradient(0deg, $color-contrast, $color-contrast 36%, $color-primary 36%);
+  }
+
   color: $color-contrast;
+  position: relative;
 
   @media (min-width: $tablet-width) {
     background-color: transparent;
+    background-image: none;
     color: $color-lg-txt;
+  }
+
+  &::before {
+    content: "";
+    background-color: $color-primary;
+    background-image: url("../img/index-background-desktop@1x.jpg");
+    background-size: 100%;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+
+    @media (min-resolution: $retina-dppx) {
+      background-image: url("../img/index-background-desktop@2x.jpg");
+    }
+
+    position: absolute;
+    top: -130px;
+    right: 0;
+    z-index: -1;
+
+    display: none;
+
+    width: 50%;
+    max-width: 720px;
+    height: 694px;
+
+    @media (min-width: $desktop-width) {
+      display: block;
+    }
   }
 }
 
