@@ -25,19 +25,35 @@
 .site-list__link {
   color: inherit;
 
+  @media (min-width: $desktop-width) {
+    color: $color-contrast;
+  }
+
   &[href]:hover,
   &[href]:focus {
     color: rgba($color-lg-txt, 0.6%);
+
+    @media (min-width: $desktop-width) {
+      color: rgba($color-contrast, 0.6%);
+    }
   }
 
   &[href]:active {
     color: rgba($color-lg-txt, 0.3%);
+
+    @media (min-width: $desktop-width) {
+      color: rgba($color-contrast, 0.3%);
+    }
   }
 
   &:not([href]) {
     @media (min-width: $tablet-width) {
       border-bottom: 2px solid $color-primary;
       padding-bottom: 6px;
+    }
+
+    @media (min-width: $desktop-width) {
+      border-bottom-color: $color-contrast;
     }
   }
 }

@@ -19,7 +19,6 @@
   position: relative;
 
   display: grid;
-  justify-items: center;
   align-items: center;
 
   @media (max-width: $mobile-width-only) {
@@ -40,22 +39,36 @@
 
 .header__logo-link {
   display: inline-flex;
+  justify-self: center;
 
   width: 320px;
-  height: 66px;
   padding-top: 12px;
   padding-bottom: 16px;
   padding-left: 20px;
   padding-right: 20px;
 
   @media (min-width: $tablet-width) {
+    align-self: start;
+
     width: 174px;
-    height: 52px;
     padding: 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 202px;
+    padding-top: 6px;
   }
 
   &[href] {
     cursor: pointer;
+  }
+}
+
+.header__logo {
+  display: block;
+
+  @media (min-width: $desktop-width) {
+    width: 202px;
   }
 }
 

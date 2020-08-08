@@ -13,7 +13,11 @@
   <header class="header">
     <div class="header__wrapper container">
       <a class="header__logo-link">
-        <img class="header__logo" src="img/logo-mobile.svg" width="190" height="38" alt="Логотип Cat Energy">
+        <picture>
+          <source media="(min-width: 1300px)" srcset="img/logo-desktop.svg">
+          <source media="(min-width: 768px)" srcset="img/logo-tablet.svg">
+          <img class="header__logo" src="img/logo-mobile.svg" width="190" height="38" alt="Логотип Cat Energy">
+        </picture>
       </a>
 
       <nav class="header__navigation header__navigation--opened">
@@ -38,7 +42,12 @@
         <p class="promo__tagline">Занялся собой? Займись котом!</p>
 
         <div class="promo__img-wrapper">
-          <img src="img/index-can-mobile@1x.png" width="280" height="270" alt="Упаковка продукта">
+          <picture>
+            <source media="(min-width: 1300px)" srcset="img/index-can-desktop@1x.png, img/index-can-desktop@2x.png 2x">
+            <source media="(min-width: 768px)" srcset="img/index-can-tablet@1x.jpg, img/index-can-tablet@2x.jpg 2x">
+            <img class="promo__img" src="img/index-can-mobile@1x.png" srcset="img/index-can-mobile@2x.png 2x"
+              width="280" height="270" alt="Упаковка продукта">
+          </picture>
         </div>
 
         <a class="promo__link button" href="form.html">Подобрать программу</a>
@@ -92,7 +101,7 @@
           <p class="example__txt">Борис сбросил 5&nbsp;кг за&nbsp;2&nbsp;месяца, просто заменив свой обычный корм
             на&nbsp;Cat Energy Slim.
             Отличный результат без изнуряющих
-            тренировок! При этом он&nbsp;не&nbsp;менял своих привычек и по-прежнему спит по&nbsp;16&nbsp;часов
+            тренировок! При этом он не менял своих привычек и по-прежнему спит по&nbsp;16&nbsp;часов
             в&nbsp;день.</p>
 
           <dl class="example__list">
@@ -114,10 +123,20 @@
         <div class="example__slider-wrapper">
           <div class="example__images">
             <div class="example__img-wrapper example__img-wrapper--before">
-              <img src="img/before-mobile@1x.png" width="311" height="232" alt="Толстый кот 'до'">
+              <picture>
+                <source media="(min-width: 1300px)" srcset="img/before-desktop@1x.png, img/before-desktop@2x.png 2x">
+                <source media="(min-width: 768px)" srcset="img/before-tablet@1x.png, img/before-tablet@2x.png 2x">
+                <img class="example__img" src="img/before-mobile@1x.png" srcset="img/before-mobile@2x.png 2x"
+                  width="320" height="240" alt="Толстый кот 'до'">
+              </picture>
             </div>
             <div class="example__img-wrapper example__img-wrapper--after">
-              <img src="img/after-mobile@1x.png" width="311" height="232" alt="Похудевший кот 'после'">
+              <picture>
+                <source media="(min-width: 1300px)" srcset="img/after-desktop@1x.png, img/after-desktop@2x.png 2x">
+                <source media="(min-width: 768px)" srcset="img/after-tablet@1x.png, img/after-tablet@2x.png 2x">
+                <img class="example__img" src="img/after-mobile@1x.png" srcset="img/after-mobile@2x.png 2x" width="320"
+                  height="240" alt="Похудевший кот 'после'">
+              </picture>
             </div>
           </div>
           <div class="example__slider">
