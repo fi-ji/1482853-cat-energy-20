@@ -29,7 +29,7 @@
     content: "";
     background-color: $color-primary;
     background-image: url("../img/index-background-desktop@1x.jpg");
-    background-size: 100%;
+    background-size: cover;
     background-position: 0 0;
     background-repeat: no-repeat;
 
@@ -39,13 +39,13 @@
 
     position: absolute;
     top: -130px;
+    left: 50%;
     right: 0;
     z-index: -1;
 
     display: none;
 
-    width: 50%;
-    max-width: 720px;
+    max-width: 900px;
     height: 694px;
 
     @media (min-width: $desktop-width) {

@@ -1,14 +1,17 @@
 .social {
+  @include list-reset;
+
   display: flex;
+  justify-content: center;
 
   border-top: 1px solid $color-secondary-border;
   border-bottom: 1px solid $color-secondary-border;
+
+  width: 100%;
   padding-top: 20px;
   padding-bottom: 24px;
   margin: 0;
   margin-bottom: 20px;
-
-  list-style: none;
 
   @media (min-width: $tablet-width) {
     border: none;
@@ -18,4 +21,38 @@
 
 .social__item:not(:last-child) {
   margin-right: 27px;
+}
+
+.social__link {
+  display: inline-flex;
+}
+
+.social__link--vk {
+  &:hover .social__icon {
+    fill: $color-primary;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.social__link--instagram {
+  &:hover .social__icon {
+    fill: $color-primary;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.social__link--facebook {
+  &:hover .social__icon {
+    fill: $color-primary;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 }
