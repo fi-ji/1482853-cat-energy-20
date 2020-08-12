@@ -206,7 +206,16 @@
       </div>
 
       <div class="contacts__map-wrapper">
-        <img src="https://via.placeholder.com/320x362">
+        <div id="map" class="contacts__map"></div>
+
+        <div class="contacts__img-wrapper ">
+          <picture>
+            <source media="(min-width: 1300px)" srcset="img/bg-map-desktop@1x.png, img/bg-map-desktop@2x.png">
+            <source media="(min-width: 768px)" srcset="img/bg-map-tablet@1x.png, img/bg-map-tablet@2x.png 2x">
+            <img class="contacts__img" src="img/bg-map-mobile@1x.png" srcset="img/bg-map-mobile@2x.png 2x" width="320"
+              height="362" alt="ул. Большая Конюшенная, 19/8">
+          </picture>
+        </div>
       </div>
     </section>
 
@@ -254,6 +263,10 @@
       </div>
     </section>
   </footer>
+
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=3559c127-c4b1-4380-af63-6fa53d40641a"
+    type="text/javascript"></script>
+  <script src="js/script.js"></script>
 </body>
 
 </html>
