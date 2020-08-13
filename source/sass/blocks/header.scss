@@ -156,3 +156,23 @@
     background-color: rgba($color-lg-txt, 0.3%);
   }
 }
+
+// не уверена если я могу совмещать селекторы разных блоков
+@media (min-width: $desktop-width) {
+  .header__list--index .site-list__link {
+    color: $color-contrast;
+
+    &[href]:hover,
+    &[href]:focus {
+      color: rgba($color-contrast, 0.6%);
+    }
+
+    &[href]:active {
+      color: rgba($color-contrast, 0.3%);
+    }
+
+    &:not([href]) {
+      border-bottom-color: $color-contrast;
+    }
+  }
+}
