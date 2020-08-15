@@ -18,6 +18,10 @@
 
   @media (min-width: $tablet-width) {
     border-top: none;
+    margin-left: 36px;
+  }
+
+  @media (min-width: $desktop-width) {
     margin-left: 35px;
   }
 }
@@ -37,6 +41,10 @@
   &:not([href]) {
     @media (min-width: $tablet-width) {
       border-bottom: 2px solid $color-primary;
+      padding-bottom: 8px;
+    }
+
+    @media (min-width: $desktop-width) {
       padding-bottom: 6px;
     }
   }
