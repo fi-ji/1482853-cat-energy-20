@@ -1,7 +1,7 @@
 .goal {
   background-color: $color-secondary;
 
-  padding-top: 21px;
+  padding-top: 30px;
   padding-bottom: 18px;
   padding-left: 20px;
   padding-right: 20px;
@@ -23,21 +23,121 @@
   color: $color-lg-txt;
 
   font-family: $oswald;
-
-  @include font-prop(24px, 37px);
   font-weight: 400;
   text-transform: uppercase;
 
+  position: relative;
+
+  padding-left: 71px;
   margin: 0;
-  margin-bottom: 38px;
+  margin-bottom: 30px;
+
+  @include font-prop(24px, 37px);
 
   @media (min-width: $tablet-width) {
     @include font-prop(36px, 36px);
+    padding-left: 0;
     margin-bottom: 25px;
   }
 
   @media (min-width: $desktop-width) {
+    padding-left: 162px;
     margin-bottom: 74px;
+  }
+
+  &::before {
+    content: "";
+    background-color: $color-primary;
+
+    position: absolute;
+    top: -5px;
+    left: 2px;
+
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+    @media (min-width: $tablet-width) {
+      top: 15px;
+      left: auto;
+      right: 43px;
+
+      width: 200px;
+      height: 200px;
+    }
+
+    @media (min-width: $desktop-width) {
+      top: -30px;
+      left: 0;
+      right: auto;
+
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
+
+.goal--slim .goal__title {
+  &::after {
+    content: "";
+    background-image: url("../img/icon-cat-slim.svg");
+    background-repeat: no-repeat;
+
+    position: absolute;
+    top: -9px;
+    left: 9px;
+
+    width: 36px;
+    height: 50px;
+
+    @media (min-width: $tablet-width) {
+      top: 4px;
+      left: auto;
+      right: 72px;
+
+      width: 140px;
+      height: 192px;
+    }
+
+    @media (min-width: $desktop-width) {
+      top: -36px;
+      left: 15px;
+      right: auto;
+
+      width: 70px;
+      height: 97px;
+    }
+  }
+}
+
+.goal--pro .goal__title {
+  &::after {
+    content: "";
+    background-image: url("../img/icon-cat-pro.svg");
+    background-repeat: no-repeat;
+
+    position: absolute;
+    top: 6px;
+    left: -7px;
+
+    width: 67px;
+    height: 28px;
+
+    @media (min-width: $tablet-width) {
+      top: 59px;
+      left: auto;
+      right: 11px;
+      width: 268px;
+      height: 112px;
+    }
+
+    @media (min-width: $desktop-width) {
+      top: -10px;
+      left: -19px;
+      right: 0;
+      width: 134px;
+      height: 56px;
+    }
   }
 }
 
@@ -45,7 +145,7 @@
   border-bottom: 1px solid $color-secondary-border;
   padding-bottom: 22px;
   margin: 0;
-  margin-bottom: 19px;
+  margin-bottom: 18px;
 
   @media (min-width: $tablet-width) {
     width: 60%;
@@ -74,9 +174,14 @@
   color: $color-lg-txt;
 
   font-family: $oswald;
+  text-transform: uppercase;
+
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
 
   @include font-prop(16px, 16px);
-  text-transform: uppercase;
 
   &:active {
     color: rgba($color-lg-txt, 0.3%);
@@ -84,5 +189,47 @@
 
   @media (min-width: $tablet-width) {
     @include font-prop(20px, 30px);
+  }
+
+  &::before {
+    content: "";
+    background-color: $color-lg-txt;
+
+    order: 1;
+
+    width: 18px;
+    height: 2px;
+    margin-left: 14px;
+
+    transition: width 0.3s ease-out;
+
+    @media (min-width: $tablet-width) {
+      margin-left: 24px;
+    }
+
+    @media (min-width: $desktop-width) {
+      margin-left: 28px;
+    }
+  }
+
+  &:hover::before {
+    width: 26px;
+  }
+
+  &::after {
+    content: "";
+
+    order: 2;
+
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 0 5px 6px;
+    border-color: transparent transparent transparent #000000;
+  }
+
+  &:active::before,
+  &:active::after {
+    opacity: 0.3;
   }
 }

@@ -19,7 +19,6 @@
   position: relative;
 
   display: grid;
-  align-items: center;
 
   @media (max-width: $mobile-width-only) {
     padding-left: 0;
@@ -48,10 +47,9 @@
   padding-right: 20px;
 
   @media (min-width: $tablet-width) {
-    align-self: start;
-
     width: 174px;
     padding: 0;
+    padding-top: 4px;
   }
 
   @media (min-width: $desktop-width) {
@@ -157,7 +155,16 @@
   }
 }
 
-// не уверена если я могу совмещать селекторы разных блоков
+.header__navigation--nojs .header__toggle {
+  display: none;
+}
+
+.header__navigation--nojs .site-list__item {
+  display: flex;
+}
+
+// не уверена могу ли совмещать селекторы разных блоков
+
 @media (min-width: $desktop-width) {
   .header__list--index .site-list__link {
     color: $color-contrast;
