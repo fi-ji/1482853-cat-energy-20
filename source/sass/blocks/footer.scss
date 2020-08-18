@@ -12,6 +12,7 @@
   @media (min-width: $tablet-width) {
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
+    padding-top: 39px;
   }
 
   @media (min-width: $desktop-width) {
