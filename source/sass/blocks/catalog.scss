@@ -10,7 +10,7 @@
   padding-top: 26px;
 
   @media (min-width: $tablet-width) {
-    padding-top: 44px;
+    padding-top: 42px;
   }
 
   @media (min-width: $desktop-width) {
@@ -18,22 +18,31 @@
   }
 }
 
+.catalog__title-wrapper {
+  margin-bottom: 40px;
+}
+
 .catalog__title {
   color: $color-lg-txt;
+
   margin: 0;
-  margin-bottom: 41px;
 }
 
 .catalog__list {
   display: grid;
+  list-style: none;
 
-  @include list-reset;
+  @media (max-width: $mobile-width-only) {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
 
   @media (min-width: $tablet-width) {
     grid-template-columns: 1fr 1fr;
     justify-items: center;
     column-gap: 60px;
-    row-gap: 139px;
+    row-gap: 141px;
 
     padding-top: 124px;
   }
@@ -46,22 +55,19 @@
 }
 
 .catalog__item {
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+
   &--more {
     text-align: center;
-
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
 
     padding-top: 26px;
     padding-bottom: 25px;
 
     @media (min-width: $tablet-width) {
-      justify-content: flex-end;
-
       width: 324px;
       border: 2px solid $color-secondary;
+      padding-top: 50px;
       padding-bottom: 36px;
       padding-left: 39px;
       padding-right: 37px;
@@ -70,6 +76,62 @@
     @media (min-width: $desktop-width) {
       width: 245px;
     }
+  }
+}
+
+.catalog__item-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+
+  @media (max-width: $mobile-width-only) {
+    max-width: 480px;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+}
+
+.catalog__icon-link {
+  position: relative;
+
+  width: 30px;
+  height: 30px;
+  margin-bottom: 23px;
+
+  @media (min-width: $tablet-width) {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 49px;
+  }
+
+  &:hover::before,
+  &:hover::after {
+    background-color: $color-primary;
+  }
+
+  &:active::before,
+  &:active::after {
+    opacity: 0.3;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    background-color: #d3d3d3;
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    transition: background-color 0.3s ease-in;
+  }
+
+  &::after {
+    transform: rotate(90deg);
   }
 }
 
