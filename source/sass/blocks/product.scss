@@ -65,6 +65,12 @@
 .product__img {
   display: block;
 
+  transition: all 0.4s ease-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
   @media (min-width: $tablet-width) {
     width: 324px;
   }
@@ -135,7 +141,7 @@
     justify-content: space-between;
 
     @media (min-width: $tablet-width) {
-      border-bottom: 1px solid #cdcdcd;
+      border-bottom: 1px solid $color-secondary-border-dark;
     }
   }
 }
