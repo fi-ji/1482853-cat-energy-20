@@ -189,6 +189,10 @@
       }
     }
 
+    .program__input {
+      padding-right: 40px;
+    }
+
     .program__input:focus + .program__icon {
       fill: $color-primary;
     }
@@ -383,12 +387,12 @@
   flex-grow: 1;
 
   min-width: 172px;
+  width: 100%;
   height: 45px;
   border: none;
   outline: 1px solid #e7e7e7;
   padding-left: 14px;
   padding-right: 12px;
-
 
   &:hover {
     outline-color: $color-secondary-border-dark;
