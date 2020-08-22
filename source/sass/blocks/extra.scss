@@ -98,14 +98,14 @@
 .extra__list {
   @include list-reset;
 
-  border-top: 1px solid #cdcdcd;
-  border-bottom: 1px solid #cdcdcd;
+  border-top: 1px solid $color-secondary-border-dark;
+  border-bottom: 1px solid $color-secondary-border-dark;
   padding-top: 13px;
   padding-bottom: 17px;
   margin-bottom: 40px;
 
   @media (min-width: $tablet-width) {
-    border: 1px solid #cdcdcd;
+    border: 1px solid $color-secondary-border-dark;
     padding-top: 25px;
     padding-bottom: 28px;
     margin-bottom: 67px;
@@ -128,7 +128,7 @@
   flex-wrap: wrap;
 
   &:not(:last-child) {
-    border-bottom: 1px solid #cdcdcd;
+    border-bottom: 1px solid $color-secondary-border-dark;
     padding-bottom: 18px;
     margin-bottom: 12px;
 

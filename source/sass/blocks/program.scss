@@ -1,5 +1,5 @@
 .program {
-  border-top: 1px solid #d9d9d9;
+  border-top: 1px solid $color-secondary-border;
 
   @media (min-width: $tablet-width) {
     border: none;
@@ -391,11 +391,11 @@
 
 
   &:hover {
-    outline-color: #cdcdcd;
+    outline-color: $color-secondary-border-dark;
   }
 
   &:focus {
-    outline: 2px solid #444444;
+    outline: 2px solid $color-small-txt;
   }
 
   &:invalid {
@@ -451,8 +451,8 @@
   &--goals {
     color: #222222;
 
-    border-top: 1px solid #d9d9d9;
-    border-bottom: 1px solid #d9d9d9;
+    border-top: 1px solid $color-secondary-border;
+    border-bottom: 1px solid $color-secondary-border;
     padding: 21px 20px 20px;
     margin: 0 -20px;
 
@@ -500,7 +500,7 @@
 
   width: 30px;
   height: 30px;
-  border: 1px solid #cdcdcd;
+  border: 1px solid $color-secondary-border-dark;
   border-radius: 50%;
   margin-right: 15px;
 
@@ -525,7 +525,7 @@
 
   width: 30px;
   height: 30px;
-  border: 1px solid #cdcdcd;
+  border: 1px solid $color-secondary-border-dark;
   margin-right: 15px;
 
   @media (min-width: $tablet-width) {
@@ -541,7 +541,8 @@
   background-position: center;
 }
 
-.program__input + .program__label:hover::before {
+.program__input + .program__label:hover::before,
+.program__input:focus + .program__label::before {
   border-color: #bababa;
 }
 
@@ -573,6 +574,8 @@
 }
 
 .program__submit {
+  cursor: pointer;
+
   @media (min-width: $tablet-width) {
     font-size: 20px;
     min-width: 282px;

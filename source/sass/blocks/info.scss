@@ -108,6 +108,10 @@
     z-index: -1;
 
     @include font-prop (280px, 280px);
+
+    @media (max-width: $mobile-width-only) {
+      display: none;
+    }
   }
 
   br {

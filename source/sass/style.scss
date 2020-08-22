@@ -9,12 +9,14 @@
 @import "variables.scss";
 @import "mixins.scss";
 @import "scaffolding.scss";
+@import "animation.scss";
 
 // Blocks
 // Common blocks
 
 @import "blocks/page.scss";
 @import "blocks/header.scss";
+@import "blocks/toggle.scss";
 @import "blocks/site-list.scss";
 @import "blocks/button.scss";
 @import "blocks/footer.scss";

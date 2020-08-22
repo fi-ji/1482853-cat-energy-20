@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HTML Academy: Кэт энерджи</title>
+  <title>HTML Academy: Cat Energy</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -42,8 +42,9 @@
       </a>
 
       <nav class="header__navigation header__navigation--closed header__navigation--nojs">
-        <button class="header__toggle" type="button">
+        <button class="header__toggle toggle" type="button" aria-haspopup="true" aria-expanded="false">
           <span class="visually-hidden">Открыть/Закрыть меню</span>
+          <span class="toggle__btn"></span>
         </button>
 
         <ul class="header__list header__list--index site-list">
@@ -186,7 +187,7 @@
             <div class="example__scale">
               <div class="example__bar"></div>
             </div>
-            <button class="example__toggle" type="button"></button>
+            <button class="example__toggle" type="button" aria-label="Slider"></button>
             <button class="example__slider-button" type="button">Стало</button>
           </div>
         </div>
@@ -206,7 +207,7 @@
       </div>
 
       <div class="contacts__map-wrapper">
-        <div id="map" class="contacts__map"></div>
+        <div id="map" class="contacts__map" aria-label="map"></div>
 
         <div class="contacts__img-wrapper ">
           <picture>
@@ -231,31 +232,32 @@
           <li class="social__item">
             <a class="social__link social__link--vk" href="#" target="_blank"
               aria-label="Перейти на нашу страницу Вконтакте">
-              <svg class="social__icon" width="23" height="23">
+              <svg class="social__icon" width="23" height="23" aria-hidden="true">
                 <use xlink:href="#icon-vk"></use>
               </svg>
             </a></li>
           <li class="social__item">
             <a class="social__link social__link--instagram" href="#" target="_blank"
               aria-label="Перейти на нашу страницу в Instagram">
-              <svg class="social__icon" width="16" height="16">
+              <svg class="social__icon" width="16" height="16" aria-hidden="true">
                 <use xlink:href="#icon-insta"></use>
               </svg>
             </a></li>
           <li class="social__item">
             <a class="social__link social__link--facebook" href="#" target="_blank"
               aria-label="Перейти на нашу страницу в Facebook">
-              <svg class="social__icon" width="10" height="19">
+              <svg class="social__icon" width="10" height="19" aria-hidden="true">
                 <use xlink:href="#icon-fb"></use>
               </svg>
             </a></li>
         </ul>
 
         <div class="footer__copyright copyright">
-          <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive" target="_blank">HTML Academy</a>
+          <a class="copyright__link" href="https://htmlacademy.ru/intensive/adaptive" target="_blank"
+            aria-label="Переход на страницу Html Academy">HTML Academy</a>
 
           <a class="copyright__logo-link" href="https://htmlacademy.ru/intensive/adaptive" target="_blank">
-            <svg class="copyright__logo" width="27" height="34">
+            <svg class="copyright__logo" width="27" height="34" role="img" aria-label="Лого Html Academy">
               <use xlink:href="#logo-htmlacademy"></use>
             </svg>
           </a>

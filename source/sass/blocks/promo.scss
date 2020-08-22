@@ -140,6 +140,8 @@
 
 .promo__img {
   display: block;
+  animation-name: slideLeft;
+  animation-duration: 1s;
 
   @media (min-width: $tablet-width) {
     width: 709px;
