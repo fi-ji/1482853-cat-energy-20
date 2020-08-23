@@ -11,9 +11,13 @@ const rename = require('gulp-rename');
 const imagemin = require('gulp-imagemin');
 const webp = require('gulp-webp');
 const svgstore = require('gulp-svgstore');
+const htmlmin = require('gulp-htmlmin');
 const posthtml = require('gulp-posthtml');
 const include = require('posthtml-include');
 const del = require('del');
+const uglify = require('gulp-uglify-es').default;
+const pipeline = require('readable-stream').pipeline;
+
 
 // Styles
 
@@ -37,10 +41,37 @@ exports.styles = styles;
 // HTML
 
 const html = () => {
-  return gulp.src('source/*.html').pipe(posthtml([include()])).pipe(gulp.dest('build'));
+  return gulp
+    .src('source/*.html')
+    .pipe(plumber())
+    .pipe(sourcemap.init())
+    .pipe(posthtml([include()]))
+    .pipe(htmlmin({
+      minifyURLs: true,
+      collapseWhitespace: true,
+      removeComments: true,
+      sortAttributes: true,
+    }))
+    .pipe(sourcemap.write('.'))
+    .pipe(gulp.dest('build'));
 };
 
 exports.html = html;
+
+// Uglify JS
+
+const compress = () => {
+  return pipeline(
+    gulp.src('source/js/**/*.js'),
+    sourcemap.init(),
+    uglify(),
+    rename('script.min.js'),
+    sourcemap.write('.'),
+    gulp.dest('build/js')
+  );
+}
+
+exports.compress = compress;
 
 // Server
 
@@ -62,10 +93,10 @@ exports.server = server;
 
 const watcher = () => {
   gulp.watch('source/sass/**/*.scss', gulp.series('styles'));
-  gulp.watch('source/*.html').on('change', sync.reload);
+  gulp.watch('source/*.html', gulp.series('html')).on('change', sync.reload);
 };
 
-exports.default = gulp.series(styles, server, watcher);
+exports.default = gulp.series(styles, html, compress, server, watcher);
 
 // Images
 
@@ -106,7 +137,7 @@ exports.sprite = sprite;
 
 const copy = () => {
   return gulp
-    .src(['source/fonts/**/*.{woff,woff2}', 'source/js/**/*.js', 'source/*.ico'], {
+    .src(['source/fonts/**/*.{woff,woff2}', 'source/*.ico'], {
       base: 'source'
     })
     .pipe(gulp.dest('build'));
@@ -122,6 +153,6 @@ const clean = () => {
 
 exports.clean = clean;
 
-const build = gulp.series(clean, copy, styles, sprite, webpConvert, images, html);
+const build = gulp.series(clean, copy, styles, sprite, webpConvert, images, html, compress);
 
 exports.build = build;

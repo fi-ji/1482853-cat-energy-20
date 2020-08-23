@@ -34,8 +34,7 @@ if (pageIndex) {
 
   function initComparisons() {
     sliderToggle.addEventListener('mousedown', function (e) {
-      let x = e.offsetX;
-      console.log(x);
+      let xPos = e.offsetX;
     });
   }
 }
