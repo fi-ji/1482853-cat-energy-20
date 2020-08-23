@@ -83,6 +83,23 @@
   }
 }
 
+.header__navigation--opened .toggle__btn {
+  background: transparent;
+  transition: background-color 0.01s 0.01s;
+
+  &::before {
+    top: 0;
+    transform: rotate(45deg);
+    transition: top 0.3s, transform 0.3s 0.5s;
+  }
+
+  &::after {
+    top: 0;
+    transform: rotate(-45deg);
+    transition: top 0.3s, transform 0.3s 0.5s;
+  }
+}
+
 .header__navigation--nojs .header__toggle {
   display: none;
 }
@@ -91,10 +108,8 @@
   display: flex;
 }
 
-// не уверена могу ли совмещать селекторы разных блоков
-
-@media (min-width: $desktop-width) {
-  .header__list--index .site-list__link {
+.header__list--index .site-list__link {
+  @media (min-width: $desktop-width) {
     color: $color-contrast;
 
     &[href]:hover,
@@ -111,3 +126,4 @@
     }
   }
 }
+
