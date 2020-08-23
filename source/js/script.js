@@ -20,21 +20,24 @@ headerToggle.addEventListener('click', function () {
 var tabletWidth = 768;
 var desktopWidth = 1300;
 
+var pageIndex = document.querySelector("#page-index");
 var sliderToggle = document.querySelector('.example__toggle');
 var sliderImages = document.querySelector('.example__images');
 var sliderImgBefore = document.querySelector('.example__img-wrapper--before');
 var sliderImgAfter = document.querySelector('.example__img-wrapper--after');
 
-var w = sliderImages.offsetWidth;
+if (pageIndex) {
+  var w = sliderImages.offsetWidth;
 
-sliderImgBefore.style.width = w / 2 + 'px';
-sliderImgAfter.style.width = w - sliderImgBefore.offsetWidth + 'px';
+  sliderImgBefore.style.width = w / 2 + 'px';
+  sliderImgAfter.style.width = w - sliderImgBefore.offsetWidth + 'px';
 
-function initComparisons() {
-  sliderToggle.addEventListener('mousedown', function (e) {
-    let x = e.offsetX;
-    console.log(x);
-  });
+  function initComparisons() {
+    sliderToggle.addEventListener('mousedown', function (e) {
+      let x = e.offsetX;
+      console.log(x);
+    });
+  }
 }
 
 // Валидация формы
