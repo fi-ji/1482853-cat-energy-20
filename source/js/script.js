@@ -32,7 +32,7 @@ var toggleWidth, scaleWidth, sliderWidth;
 
 function getElemWidth(elem) {
   return parseInt(getComputedStyle(elem).width, 10);
-};
+}
 
 var getElemCoords = function (elem) {
   var box = elem.getBoundingClientRect();
@@ -41,44 +41,44 @@ var getElemCoords = function (elem) {
 
 btnBefore.addEventListener('click', function (e) {
   e.preventDefault();
-  sliderImgBefore.style.width = "100%";
-  sliderImgAfter.style.width = "0";
-  sliderToggle.style.left = "0";
+  sliderImgBefore.style.width = '100%';
+  sliderImgAfter.style.width = '0';
+  sliderToggle.style.left = '0';
   sliderBar.style.marginLeft = '0';
-  sliderBar.style.transition = "margin-left 2.5s ease-in-out";
-  sliderImgBefore.style.transition = "width 2s ease-in-out";
+  sliderBar.style.transition = 'margin-left 2.5s ease-in-out';
+  sliderImgBefore.style.transition = 'width 2s ease-in-out';
 
   if (viewport >= tabletWidth) {
-    sliderToggle.style.transition = "left 3s ease-in-out";
-    sliderImgBefore.style.transition = "width 3s ease-in-out";
+    sliderToggle.style.transition = 'left 3s ease-in-out';
+    sliderImgBefore.style.transition = 'width 3s ease-in-out';
   }
 });
 
 btnAfter.addEventListener('click', function (e) {
   e.preventDefault();
-  sliderImgBefore.style.width = "0";
-  sliderImgAfter.style.width = "100%";
-  sliderToggle.style.left = "calc(100% - " + toggleWidth + "px)";
+  sliderImgBefore.style.width = '0';
+  sliderImgAfter.style.width = '100%';
+  sliderToggle.style.left = 'calc(100% - ' + toggleWidth + 'px)';
   sliderBar.style.marginLeft = '50%';
-  sliderBar.style.transition = "margin-left 2.5s ease-in-out";
-  sliderImgAfter.style.transition = "width 2s ease-in-out";
+  sliderBar.style.transition = 'margin-left 2.5s ease-in-out';
+  sliderImgAfter.style.transition = 'width 2s ease-in-out';
 
   if (viewport >= tabletWidth) {
-    sliderToggle.style.transition = "left 3s ease-in-out";
-    sliderImgAfter.style.transition = "width 3s ease-in-out";
+    sliderToggle.style.transition = 'left 3s ease-in-out';
+    sliderImgAfter.style.transition = 'width 3s ease-in-out';
   }
 });
 
 sliderToggle.ondblclick = function () {
-  sliderImgBefore.style.width = "50%";
-  sliderImgAfter.style.width = "50%";
-  sliderToggle.style.left = "calc(50% - 15" + "px)";
+  sliderImgBefore.style.width = '50%';
+  sliderImgAfter.style.width = '50%';
+  sliderToggle.style.left = 'calc(50% - 15' + 'px)';
 };
 
 function toggleDownHandler(evtDown) {
   var toggleCoords = getElemCoords(sliderToggle);
   var scaleCoords = getElemCoords(sliderScale);
-  sliderToggle.style.transition = "none";
+  sliderToggle.style.transition = 'none';
 
   var shiftX = evtDown.pageX - toggleCoords;
 
@@ -95,27 +95,27 @@ function toggleDownHandler(evtDown) {
     }
 
     var toggleValue = newLeft / rightEdge * 100;
-    sliderToggle.style.left = newLeft + "px";
+    sliderToggle.style.left = newLeft + 'px';
 
-    sliderImgBefore.style.width = (100 - toggleValue) + "%";
-    sliderImgAfter.style.width = toggleValue + "%";
+    sliderImgBefore.style.width = 100 - toggleValue + '%';
+    sliderImgAfter.style.width = toggleValue + '%';
   };
 
   document.onmouseup = function () {
     document.onmousemove = document.onmouseup = null;
-    sliderToggle.style.transition = "left 0.2s ease-out";
+    sliderToggle.style.transition = 'left 0.2s ease-out';
   };
 
   return false;
 }
 
 function addToggleHandlers() {
-  sliderToggle.addEventListener("mousedown", toggleDownHandler);
-};
+  sliderToggle.addEventListener('mousedown', toggleDownHandler);
+}
 
 function removeGripHandlers() {
-  sliderToggle.removeEventListener("mousedown", toggleDownHandler);
-};
+  sliderToggle.removeEventListener('mousedown', toggleDownHandler);
+}
 
 var initialize = function () {
   viewport = document.documentElement.clientWidth || window.innerWidth;
@@ -130,13 +130,13 @@ var initialize = function () {
   scaleWidth = getElemWidth(sliderScale);
   toggleWidth = getElemWidth(sliderToggle);
 
-  sliderImgBefore.style.width = "";
-  sliderImgAfter.style.width = "";
-  sliderToggle.style.left = "";
+  sliderImgBefore.style.width = '';
+  sliderImgAfter.style.width = '';
+  sliderToggle.style.left = '';
 };
 
-window.addEventListener("load", initialize);
-window.addEventListener("resize", initialize);
+window.addEventListener('load', initialize);
+window.addEventListener('resize', initialize);
 
 // Валидация формы
 
