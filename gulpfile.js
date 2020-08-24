@@ -94,6 +94,7 @@ exports.server = server;
 const watcher = () => {
   gulp.watch('source/sass/**/*.scss', gulp.series('styles'));
   gulp.watch('source/*.html', gulp.series('html')).on('change', sync.reload);
+  gulp.watch('source/js/*.js', gulp.series('compress')).on('change', sync.reload);
 };
 
 exports.default = gulp.series(styles, html, compress, server, watcher);
