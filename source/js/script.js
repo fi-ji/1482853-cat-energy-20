@@ -32,7 +32,6 @@ var btnAfter = document.querySelector('.example__slider-button--after');
 var toggleWidth, scaleWidth, sliderWidth;
 
 if (pageIndex) {
-
   function getElemWidth(elem) {
     return parseInt(getComputedStyle(elem).width, 10);
   }
@@ -116,12 +115,12 @@ if (pageIndex) {
     sliderToggle.addEventListener('mousedown', toggleDownHandler);
   }
 
-  function removeGripHandlers() {
+  function removeToggleHandlers() {
     sliderToggle.removeEventListener('mousedown', toggleDownHandler);
   }
 
-  var initialize = function () {
-    viewport = document.documentElement.clientWidth || window.innerWidth;
+  function initialize() {
+    var viewport = document.documentElement.clientWidth || window.innerWidth;
 
     if (viewport >= tabletWidth) {
       addToggleHandlers();
@@ -191,26 +190,54 @@ if (pageForm) {
 
 // Map
 
+var myMap;
+var myPlacemark;
+
+/*функция для того, чтобы при изменении размера вьюпорта карта менялась не множество раз, а один раз при окончательном изменении ширины окна*/
+function debounce(f, ms) {
+  var timer = null;
+
+  return function (cb) {
+    var onComplete = function () {
+      f.apply(this, cb);
+      timer = null;
+    };
+    if (timer) {
+      clearTimeout(timer);
+    }
+    timer = setTimeout(onComplete, ms);
+  };
+}
+
+function setProps() {
+  viewport = document.documentElement.clientWidth || window.innerWidth;
+
+  if (viewport >= tabletWidth) {
+    myPlacemark.options.set('iconImageHref', 'img/map-lg-pin.svg');
+    myPlacemark.options.set('iconImageSize', [113, 106]);
+    myPlacemark.options.set('iconImageOffset', [-56.5, -106]);
+  } else {
+    myPlacemark.options.set('iconImageHref', 'img/map-small-pin.svg');
+    myPlacemark.options.set('iconImageSize', [57, 53]);
+    myPlacemark.options.set('iconImageOffset', [-28.5, -53]);
+  }
+
+  if (viewport >= desktopWidth) {
+    myMap.setCenter([59.939163, 30.318069]);
+  } else {
+    myMap.setCenter([59.938635, 30.323118]);
+  }
+}
+
 ymaps.ready(init);
 
-var viewport = document.documentElement.clientWidth || window.innerWidth;
-var mapCenter;
-var imageHref;
-var imageSize;
-var imageOffset;
-
 function init() {
-  mapCenter = viewport < desktopWidth ? [59.938635, 30.323118] : [59.939163, 30.318069];
-  imageHref = viewport < tabletWidth ? 'img/map-small-pin.svg' : 'img/map-lg-pin.svg';
-  imageSize = viewport < tabletWidth ? [57, 53] : [113, 106];
-  imageOffset = viewport < tabletWidth ? [-28.5, -53] : [-56.5, -106];
-
-  var myMap = new ymaps.Map('map', {
-    center: mapCenter,
+  myMap = new ymaps.Map('map', {
+    center: [59.938635, 30.323118],
     zoom: 16
   });
 
-  var myPlacemark = new ymaps.Placemark(
+  myPlacemark = new ymaps.Placemark(
     [59.938635, 30.323118],
     {
       hintContent: 'Мы здесь!',
@@ -218,12 +245,16 @@ function init() {
     },
     {
       iconLayout: 'default#image',
-      iconImageHref: imageHref,
-      iconImageSize: imageSize,
-      iconImageOffset: imageOffset
+      iconImageHref: 'img/map-small-pin.svg',
+      iconImageSize: [57, 53],
+      iconImageOffset: [-28.5, -53]
     }
   );
+
+  setProps();
 
   myMap.geoObjects.add(myPlacemark);
   myMap.behaviors.disable('scrollZoom');
 }
+
+window.addEventListener('resize', debounce(setProps, 1000));
