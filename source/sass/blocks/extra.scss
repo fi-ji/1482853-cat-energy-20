@@ -269,7 +269,7 @@
     flex-direction: row;
     align-items: start;
 
-    height: 200px;
+    min-height: 200px;
   }
 
   @media (min-width: $desktop-width) {
