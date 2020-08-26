@@ -20,23 +20,57 @@ headerToggle.addEventListener('click', function () {
 var tabletWidth = 768;
 var desktopWidth = 1300;
 
-var pageIndex = document.querySelector("#page-index");
-var sliderToggle = document.querySelector('.example__toggle');
-var sliderImages = document.querySelector('.example__images');
-var sliderImgBefore = document.querySelector('.example__img-wrapper--before');
-var sliderImgAfter = document.querySelector('.example__img-wrapper--after');
+var pageIndex = document.querySelector('#page-index');
+var example = document.querySelector('.example');
+var sliderImgBefore = example.querySelector('.example__img-wrapper--before');
+var sliderImgAfter = example.querySelector('.example__img-wrapper--after');
+var sliderBar = example.querySelector('.example__bar');
+var sliderToggle = example.querySelector('.example__toggle');
+var btnBefore = example.querySelector('.example__slider-button--before');
+var btnAfter = example.querySelector('.example__slider-button--after');
 
 if (pageIndex) {
-  var w = sliderImages.offsetWidth;
-
-  sliderImgBefore.style.width = w / 2 + 'px';
-  sliderImgAfter.style.width = w - sliderImgBefore.offsetWidth + 'px';
-
-  function initComparisons() {
-    sliderToggle.addEventListener('mousedown', function (e) {
-      let xPos = e.offsetX;
-    });
+  function getElemWidth(elem) {
+    return parseInt(getComputedStyle(elem).width, 10);
   }
+
+  var toggleWidth = getElemWidth(sliderToggle);
+
+  btnBefore.addEventListener('click', function (e) {
+    e.preventDefault();
+    sliderImgBefore.style.width = '100%';
+    sliderImgAfter.style.width = '0';
+    sliderToggle.style.left = '0';
+    sliderBar.style.marginLeft = '0';
+    sliderBar.style.transition = 'margin-left 2.5s ease-in-out';
+    sliderImgBefore.style.transition = 'width 2s ease-in-out';
+
+    if (viewport >= tabletWidth) {
+      sliderToggle.style.transition = 'left 3s ease-in-out';
+      sliderImgBefore.style.transition = 'width 3s ease-in-out';
+    }
+  });
+
+  btnAfter.addEventListener('click', function (e) {
+    e.preventDefault();
+    sliderImgBefore.style.width = '0';
+    sliderImgAfter.style.width = '100%';
+    sliderToggle.style.left = 'calc(100% - ' + toggleWidth + 'px)';
+    sliderBar.style.marginLeft = '50%';
+    sliderBar.style.transition = 'margin-left 2.5s ease-in-out';
+    sliderImgAfter.style.transition = 'width 2s ease-in-out';
+
+    if (viewport >= tabletWidth) {
+      sliderToggle.style.transition = 'left 3s ease-in-out';
+      sliderImgAfter.style.transition = 'width 3s ease-in-out';
+    }
+  });
+
+  sliderToggle.ondblclick = function () {
+    sliderImgBefore.style.width = '50%';
+    sliderImgAfter.style.width = '50%';
+    sliderToggle.style.left = 'calc(50% - 15' + 'px)';
+  };
 }
 
 // Валидация формы
@@ -88,21 +122,54 @@ if (pageForm) {
 
 // Map
 
+var myMap;
+var myPlacemark;
+
+/*функция для того, чтобы при изменении размера вьюпорта карта менялась не множество раз, а один раз при окончательном изменении ширины окна*/
+function debounce(f, ms) {
+  var timer = null;
+
+  return function (cb) {
+    var onComplete = function () {
+      f.apply(this, cb);
+      timer = null;
+    };
+    if (timer) {
+      clearTimeout(timer);
+    }
+    timer = setTimeout(onComplete, ms);
+  };
+}
+
+function setProps() {
+  viewport = document.documentElement.clientWidth || window.innerWidth;
+
+  if (viewport >= tabletWidth) {
+    myPlacemark.options.set('iconImageHref', 'img/map-lg-pin.svg');
+    myPlacemark.options.set('iconImageSize', [113, 106]);
+    myPlacemark.options.set('iconImageOffset', [-56.5, -106]);
+  } else {
+    myPlacemark.options.set('iconImageHref', 'img/map-small-pin.svg');
+    myPlacemark.options.set('iconImageSize', [57, 53]);
+    myPlacemark.options.set('iconImageOffset', [-28.5, -53]);
+  }
+
+  if (viewport >= desktopWidth) {
+    myMap.setCenter([59.939163, 30.318069]);
+  } else {
+    myMap.setCenter([59.938635, 30.323118]);
+  }
+}
+
 ymaps.ready(init);
 
 function init() {
-  const viewport = document.documentElement.clientWidth || window.innerWidth;
-  var mapCenter = viewport < tabletWidth ? [59.938635, 30.323118] : [59.939163, 30.318069];
-  var imageHref = viewport < tabletWidth ? 'img/map-small-pin.svg' : 'img/map-lg-pin.svg';
-  var imageSize = viewport < tabletWidth ? [57, 53] : [113, 106];
-  var imageOffset = viewport < tabletWidth ? [-28.5, -53] : [-56.5, -106];
-
-  var myMap = new ymaps.Map('map', {
-    center: mapCenter,
+  myMap = new ymaps.Map('map', {
+    center: [59.938635, 30.323118],
     zoom: 16
   });
 
-  var myPlacemark = new ymaps.Placemark(
+  myPlacemark = new ymaps.Placemark(
     [59.938635, 30.323118],
     {
       hintContent: 'Мы здесь!',
@@ -110,12 +177,16 @@ function init() {
     },
     {
       iconLayout: 'default#image',
-      iconImageHref: imageHref,
-      iconImageSize: imageSize,
-      iconImageOffset: imageOffset
+      iconImageHref: 'img/map-small-pin.svg',
+      iconImageSize: [57, 53],
+      iconImageOffset: [-28.5, -53]
     }
   );
+
+  setProps();
 
   myMap.geoObjects.add(myPlacemark);
   myMap.behaviors.disable('scrollZoom');
 }
+
+window.addEventListener('resize', debounce(setProps, 1000));

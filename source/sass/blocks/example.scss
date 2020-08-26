@@ -1,12 +1,13 @@
 .example {
   background-color: #eaeaea;
+  overflow: hidden;
 
   @media (min-width: $tablet-width) {
     background-image: linear-gradient(180deg, $color-contrast, $color-contrast 57.3%, #eaeaea 57.3%);
   }
 
   @media (min-width: $desktop-width) {
-    background-image: linear-gradient(180deg, $color-contrast, $color-contrast 28.8%, $color-secondary 28.8%);
+    background-image: linear-gradient(180deg, $color-contrast, $color-contrast 187px, $color-secondary 187px);
   }
 }
 
@@ -213,10 +214,6 @@
 .example__images {
   position: relative;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
   width: 320px;
   height: 240px;
   margin-bottom: 32px;
@@ -224,10 +221,8 @@
   margin-right: -20px;
 
   @media (min-width: $tablet-width) {
-    flex-direction: row;
-
     width: 690px;
-    height: auto;
+    height: 517px;
     margin-bottom: 14px;
     margin-left: 0;
     margin-right: 0;
@@ -241,19 +236,23 @@
 }
 
 .example__img-wrapper {
+  position: absolute;
+
   display: flex;
-
-  width: 100%;
-
-  @media (min-width: $tablet-width) {
-    width: 50%;
-    overflow: hidden;
-  }
+  overflow: hidden;
 
   &--before {
-    @media (min-width: $desktop-width) {
+    width: 100%;
+
+    @media (min-width: $tablet-width) {
       width: 50%;
 
+      .example__img {
+        transform: translateX(7px);
+      }
+    }
+
+    @media (min-width: $desktop-width) {
       .example__img {
         transform: translateX(-40px);
       }
@@ -261,21 +260,34 @@
   }
 
   &--after {
-    display: none;
+    right: 0;
+    flex-direction: row-reverse;
+
+    width: 0;
 
     @media (min-width: $tablet-width) {
-      display: flex;
-      flex-direction: row-reverse;
+      width: 50%;
+
+      .example__img {
+        transform: translateX(7px);
+      }
     }
 
     @media (min-width: $desktop-width) {
-      width: 50%;
+      box-shadow: 400px 587px 0 400px #eaeaea;
+      background-image: linear-gradient($color-contrast 0, $color-contrast 187px, #eaeaea 187px);
+
+      .example__img {
+        transform: translateX(0);
+      }
     }
   }
 }
 
 .example__img {
   display: block;
+  min-width: 320px;
+  height: 240px;
 
   @media (min-width: $tablet-width) {
     min-width: 690px;
@@ -285,6 +297,8 @@
 
 .example__slider {
   position: relative;
+  z-index: 1;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -332,6 +346,8 @@
 
 .example__scale {
   background-color: $color-contrast;
+  position: relative;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -341,6 +357,7 @@
   border: 1px solid $color-secondary-border-dark;
   border-radius: 6px;
   padding-left: 6px;
+  padding-right: 1px;
 
   @media (min-width: $tablet-width) {
     background-color: #dcdcdc;
@@ -348,6 +365,7 @@
     height: 6px;
     border: none;
     padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -366,7 +384,7 @@
   background-image: radial-gradient($color-primary 0, $color-primary 4px, $color-contrast 4px, $color-contrast 100%);
 
   position: absolute;
-  left: 47%;
+  left: calc(50% - 15px);
 
   width: 34px;
   height: 34px;

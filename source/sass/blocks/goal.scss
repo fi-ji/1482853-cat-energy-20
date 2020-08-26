@@ -1,6 +1,9 @@
 .goal {
   background-color: $color-secondary;
 
+  display: flex;
+  flex-direction: column;
+
   padding-top: 30px;
   padding-bottom: 18px;
   padding-left: 20px;
@@ -177,6 +180,8 @@
   text-transform: uppercase;
 
   position: relative;
+
+  margin-top: auto;
 
   display: inline-flex;
   align-items: center;

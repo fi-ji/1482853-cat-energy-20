@@ -5,6 +5,9 @@
 
   @media (min-width: $tablet-width) {
     display: flex;
+    flex-wrap: wrap;
+
+    max-width: 600px;
   }
 }
 
