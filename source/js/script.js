@@ -22,24 +22,19 @@ var desktopWidth = 1300;
 
 var pageIndex = document.querySelector('#page-index');
 var example = document.querySelector('.example');
-var sliderImgBefore = document.querySelector('.example__img-wrapper--before');
-var sliderImgAfter = document.querySelector('.example__img-wrapper--after');
-var sliderScale = document.querySelector('.example__scale');
-var sliderBar = document.querySelector('.example__bar');
-var sliderToggle = document.querySelector('.example__toggle');
-var btnBefore = document.querySelector('.example__slider-button--before');
-var btnAfter = document.querySelector('.example__slider-button--after');
-var toggleWidth, scaleWidth, sliderWidth;
+var sliderImgBefore = example.querySelector('.example__img-wrapper--before');
+var sliderImgAfter = example.querySelector('.example__img-wrapper--after');
+var sliderBar = example.querySelector('.example__bar');
+var sliderToggle = example.querySelector('.example__toggle');
+var btnBefore = example.querySelector('.example__slider-button--before');
+var btnAfter = example.querySelector('.example__slider-button--after');
 
 if (pageIndex) {
   function getElemWidth(elem) {
     return parseInt(getComputedStyle(elem).width, 10);
   }
 
-  var getElemCoords = function (elem) {
-    var box = elem.getBoundingClientRect();
-    return box.left + pageXOffset;
-  };
+  var toggleWidth = getElemWidth(sliderToggle);
 
   btnBefore.addEventListener('click', function (e) {
     e.preventDefault();
@@ -76,69 +71,6 @@ if (pageIndex) {
     sliderImgAfter.style.width = '50%';
     sliderToggle.style.left = 'calc(50% - 15' + 'px)';
   };
-
-  function toggleDownHandler(evtDown) {
-    var toggleCoords = getElemCoords(sliderToggle);
-    var scaleCoords = getElemCoords(sliderScale);
-    sliderToggle.style.transition = 'none';
-
-    var shiftX = evtDown.pageX - toggleCoords;
-
-    document.onmousemove = function (evtMove) {
-      var newLeft = evtMove.pageX - shiftX - scaleCoords;
-
-      if (newLeft < 0) {
-        newLeft = 0;
-      }
-
-      var rightEdge = scaleWidth - toggleWidth;
-      if (newLeft > rightEdge) {
-        newLeft = rightEdge;
-      }
-
-      var toggleValue = newLeft / rightEdge * 100;
-      sliderToggle.style.left = newLeft + 'px';
-
-      sliderImgBefore.style.width = 100 - toggleValue + '%';
-      sliderImgAfter.style.width = toggleValue + '%';
-    };
-
-    document.onmouseup = function () {
-      document.onmousemove = document.onmouseup = null;
-      sliderToggle.style.transition = 'left 0.2s ease-out';
-    };
-
-    return false;
-  }
-
-  function addToggleHandlers() {
-    sliderToggle.addEventListener('mousedown', toggleDownHandler);
-  }
-
-  function removeToggleHandlers() {
-    sliderToggle.removeEventListener('mousedown', toggleDownHandler);
-  }
-
-  function initialize() {
-    var viewport = document.documentElement.clientWidth || window.innerWidth;
-
-    if (viewport >= tabletWidth) {
-      addToggleHandlers();
-    } else {
-      removeToggleHandlers();
-    }
-
-    sliderWidth = getElemWidth(example);
-    scaleWidth = getElemWidth(sliderScale);
-    toggleWidth = getElemWidth(sliderToggle);
-
-    sliderImgBefore.style.width = '';
-    sliderImgAfter.style.width = '';
-    sliderToggle.style.left = '';
-  };
-
-  window.addEventListener('load', initialize);
-  window.addEventListener('resize', initialize);
 }
 
 // Валидация формы
