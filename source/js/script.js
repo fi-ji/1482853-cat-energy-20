@@ -21,13 +21,12 @@ var tabletWidth = 768;
 var desktopWidth = 1300;
 
 var pageIndex = document.querySelector('#page-index');
-var example = document.querySelector('.example');
-var sliderImgBefore = example.querySelector('.example__img-wrapper--before');
-var sliderImgAfter = example.querySelector('.example__img-wrapper--after');
-var sliderBar = example.querySelector('.example__bar');
-var sliderToggle = example.querySelector('.example__toggle');
-var btnBefore = example.querySelector('.example__slider-button--before');
-var btnAfter = example.querySelector('.example__slider-button--after');
+var sliderImgBefore = document.querySelector('.example__img-wrapper--before');
+var sliderImgAfter = document.querySelector('.example__img-wrapper--after');
+var sliderBar = document.querySelector('.example__bar');
+var sliderToggle = document.querySelector('.example__toggle');
+var btnBefore = document.querySelector('.example__slider-button--before');
+var btnAfter = document.querySelector('.example__slider-button--after');
 
 if (pageIndex) {
   function getElemWidth(elem) {
