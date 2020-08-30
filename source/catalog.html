@@ -6,15 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cat Energy: Каталог продукции</title>
   <link rel="preload" href="css/style.min.css" as="style">
-  <link rel="preload" href="fonts/oswaldregular.woff2" as="font">
-  <link rel="preload" href="fonts/oswaldmedium.woff2" as="font">
+  <link rel="preload" href="fonts/oswaldregular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="fonts/oswaldmedium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   <link rel="preload" href="js/script.min.js" as="script">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 
 <body class="page__body">
   <svg style="display: none;">
-    <include src="source/img/sprite.svg"></include>
+    <include src="build/img/sprite.svg"></include>
   </svg>
 
   <header class="header">
@@ -449,7 +449,7 @@
       </div>
 
       <div class="contacts__map-wrapper">
-        <div id="map" class="contacts__map" aria-label="map"></div>
+        <div id="map" class="contacts__map"></div>
 
         <div class="contacts__img-wrapper ">
           <picture>
@@ -514,8 +514,7 @@
     </section>
   </footer>
 
-  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=3559c127-c4b1-4380-af63-6fa53d40641a"
-    type="text/javascript"></script>
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=3559c127-c4b1-4380-af63-6fa53d40641a"></script>
   <script src="js/script.min.js"></script>
 </body>
 

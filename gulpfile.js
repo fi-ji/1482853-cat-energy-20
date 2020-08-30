@@ -44,7 +44,6 @@ const html = () => {
   return gulp
     .src('source/*.html')
     .pipe(plumber())
-    .pipe(sourcemap.init())
     .pipe(posthtml([include()]))
     .pipe(htmlmin({
       minifyURLs: true,
@@ -52,7 +51,6 @@ const html = () => {
       removeComments: true,
       sortAttributes: true,
     }))
-    .pipe(sourcemap.write('.'))
     .pipe(gulp.dest('build'));
 };
 
@@ -127,7 +125,16 @@ exports.webpConvert = webpConvert;
 const sprite = () => {
   return gulp
     .src('source/img/**/icon-*.svg')
-    .pipe(svgstore())
+    .pipe(
+      imagemin([
+        imagemin.svgo()
+      ])
+    )
+    .pipe(
+      svgstore({
+        inlineSvg: true
+      })
+    )
     .pipe(rename('sprite.svg'))
     .pipe(gulp.dest('build/img'));
 };
@@ -154,6 +161,6 @@ const clean = () => {
 
 exports.clean = clean;
 
-const build = gulp.series(clean, copy, styles, sprite, webpConvert, images, html, compress);
+const build = gulp.series(clean, copy, styles, images, webpConvert, sprite, html, compress);
 
 exports.build = build;
