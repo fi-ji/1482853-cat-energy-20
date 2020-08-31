@@ -95,8 +95,6 @@ const watcher = () => {
   gulp.watch('source/js/*.js', gulp.series('compress')).on('change', sync.reload);
 };
 
-exports.default = gulp.series(styles, html, compress, server, watcher);
-
 // Images
 
 const images = () => {
@@ -164,3 +162,5 @@ exports.clean = clean;
 const build = gulp.series(clean, copy, styles, images, webpConvert, sprite, html, compress);
 
 exports.build = build;
+
+exports.default = gulp.series(build, server, watcher);
