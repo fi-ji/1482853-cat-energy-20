@@ -47,7 +47,7 @@ const html = () => {
     .pipe(posthtml([include()]))
     .pipe(htmlmin({
       minifyURLs: true,
-      collapseWhitespace: true,
+      collapseWhitespace: false,
       removeComments: true,
       sortAttributes: true,
     }))
