@@ -12,8 +12,6 @@ const imagemin = require('gulp-imagemin');
 const webp = require('gulp-webp');
 const svgstore = require('gulp-svgstore');
 const htmlmin = require('gulp-htmlmin');
-const posthtml = require('gulp-posthtml');
-const include = require('posthtml-include');
 const del = require('del');
 const uglify = require('gulp-uglify-es').default;
 const pipeline = require('readable-stream').pipeline;
@@ -44,7 +42,6 @@ const html = () => {
   return gulp
     .src('source/*.html')
     .pipe(plumber())
-    .pipe(posthtml([include()]))
     .pipe(htmlmin({
       minifyURLs: true,
       collapseWhitespace: false,
